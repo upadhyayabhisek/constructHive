@@ -3,7 +3,7 @@
         <div class="footer-content">
             <p>&copy; <?php echo date('Y'); ?> """". All rights reserved.</p>
             <div class="footerContact">
-                <p>Contact us: <a href="mailto:info@yourplatform.com">info@yourplatform.com</a></p>
+                <p>Contact us: <a href="mailto:info@yourplatform.com">contact@contact.com</a></p>
             </div>
             <div class="footerSocial">
                 <a href="https://facebook.com" target="_blank">
