@@ -17,10 +17,16 @@ include_once 'include/sessionStart.php';
 
     <?php
     include 'include/header.php';
+
+    $error = isset($_GET['error']) ? $_GET['error'] : '';
     ?>
 
     <h2>Register an Account</h2>
     <div class="formContainer">
+        <?php if ($error === 'emailExists'): ?>
+            <p style="color: red;">This email address is already registered!</p>
+        <?php endif; ?>
+
         <form action="registerProcessing.php" method="post" class="registrationForm" accept-charset="UTF-8" onsubmit="validateForm(event)">
             <table class="registrationTable">
                 <tr>

@@ -6,7 +6,7 @@ function validateForm(event) {
     const phone = document.getElementById("phoneRegister").value.trim();
     const password = document.getElementById("passwordRegister").value.trim();
     const phoneRegex = /^(?:\+977)?[9][6-9]\d{8}$/;
-    const passwordregex = /^(?=.*\d)[A-Za-z\d]{8}$/;
+    const passwordregex = /^(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if (name === "") {
         alert("Name is required.");

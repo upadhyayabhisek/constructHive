@@ -1,5 +1,4 @@
 <?php
-
 include_once 'include/databaseConnection.php';
 include_once 'include/sessionStart.php';
 
@@ -8,31 +7,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['emailRegister']);
     $password = trim($_POST['passwordRegister']);
     $mobile = trim($_POST['phoneRegister']);
-
-    $encryptedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $phoneRegexValidation = '/^(?:\+977)?[9][6-9]\d{8}$/';
+    $passwordRegexValidation = '/^(?=.*\d)[A-Za-z\d]{8,}$/';
 
     if (empty($fullName) || empty($email) || empty($password) || empty($mobile)) {
         header("Location: registerPage.php");
+        exit();
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: registerPage.php");
+        exit();
     }
 
-    $phoneRegexValidation = '/^(?:\+977)?[9][6-9]\d{8}$/';
     if (!preg_match($phoneRegexValidation, $mobile)) {
         header("Location: registerPage.php");
+        exit();
     }
 
-    if (strlen($password) < 8) {
-        header("Location: registerPage.php");
+    if (!preg_match($passwordRegexValidation, $password)) {
+        header("Location: registerPage.php?error=invalidPassword");
+        exit();
     }
 
-    echo "Registration successful!<br>";
-    echo "Name: " . htmlspecialchars($fullName) . "<br>";
-    echo "Email: " . htmlspecialchars($email) . "<br>";
-    echo "Phone: " . htmlspecialchars($mobile) . "<br>";
-    echo "Password: " . htmlspecialchars($encryptedPassword) . "<br>";
+    $checkEmailQuery = $conn->prepare("SELECT email FROM userbase WHERE email = ?");
+    $checkEmailQuery->bind_param("s", $email);
+    $checkEmailQuery->execute();
+    $checkEmailQuery->store_result();
+
+    if ($checkEmailQuery->num_rows > 0) {
+        header("Location: registerPage.php?error=emailExists");
+        exit();
+    }
+
+    $encryptedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $sqlStatement = $conn->prepare("INSERT INTO userbase (fullname, password, mobile_number, email) VALUES (?, ?, ?, ?)");
+    $sqlStatement->bind_param("ssss", $fullName, $encryptedPassword, $mobile, $email);
+
+    if ($sqlStatement->execute()) {
+
+        /*
+            Location this section to send back to homepage with user ID from database
+        */
+
+        echo "Registration successful!<br>";
+        echo "Name: " . htmlspecialchars($fullName) . "<br>";
+        echo "Email: " . htmlspecialchars($email) . "<br>";
+        echo "Phone: " . htmlspecialchars($mobile) . "<br>";
+    } else {
+        $errorMessage = "Database Insertion Error: " . $sqlStatement->error . " " . date('Y-m-d H:i:s') . "\n";
+        error_log($errorMessage, 3, __DIR__ . "/../log/ConnectionError.log");
+        die("Database Insertion Error! Please try again later.");
+    }
+    $checkEmailQuery->close();
+    $sqlStatement->close();
 } else {
     echo "Invalid request.";
 }
