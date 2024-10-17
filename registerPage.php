@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once 'include/sessionStart.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register an Account</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/website_JavaScript.js" defer></script>
+    <script src="js/mainJavaScript.js" defer></script>
 </head>
 
 <body>
@@ -24,20 +24,23 @@ session_start();
         <form action="registerProcessing.php" method="post" class="registrationForm" accept-charset="UTF-8" onsubmit="validateForm(event)">
             <table class="registrationTable">
                 <tr>
-                    <td><label for="name">Name:</label></td>
-                    <td><input type="text" id="name" name="name" class="inputText" required></td>
+                    <td><label for="nameRegister">Name:</label></td>
+                    <td><input type="text" id="nameRegister" name="nameRegister" class="inputText" required></td>
                 </tr>
                 <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" name="email" class="inputText" required></td>
+                    <td><label for="emailRegister">Email:</label></td>
+                    <td><input type="email" id="emailRegister" name="emailRegister" class="inputText" required></td>
                 </tr>
                 <tr>
-                    <td><label for="phone">Phone Number:</label></td>
-                    <td><input type="tel" id="phone" name="phone" class="inputText" required></td>
+                    <td><label for="phoneRegister">Phone Number:</label></td>
+                    <td><input type="tel" id="phoneRegister" name="phoneRegister" class="inputText" required></td>
                 </tr>
                 <tr>
-                    <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" name="password" class="inputText" required></td>
+                    <td><label for="passwordRegister">Password:</label></td>
+                    <td>
+                        <input type="password" id="passwordRegister" name="passwordRegister" class="inputText" required>
+                        <img id="togglePassword" src="images/bxs-brush.svg" alt="Toggle Password Visibility" class="passwordToggleImage" onclick="togglePasswordVisibility()">
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center;">

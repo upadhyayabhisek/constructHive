@@ -1,0 +1,20 @@
+create database construction
+
+create table userbase(
+    id int auto_increment primary key,
+    fullname varchar(50) not null,
+    password varchar(255) not null,
+    mobile_number varchar(15) not null,
+    email varchar(255) not null,
+    role enum('customer','admin') default 'customer',
+    user_type enum('customer','customer_seller') default 'customer',
+    date_of_creation timestamp default current_timestamp
+);
+
+INSERT INTO userbase (fullname, password, mobile_number, email)
+VALUES ('Ram Khatri', '$2y$10$WjZsQp4TQ1gJxLV1C8uN0.O0Z6Gzj6Jz5giytZbWnMZcGxK1V.ADO', '9801234567', 'ram.khatri@example.com');
+
+
+UPDATE userbase
+SET role = 'admin', user_type = 'customer_seller'
+WHERE id = 1;
