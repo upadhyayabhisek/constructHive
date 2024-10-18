@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!preg_match($passwordRegexValidation, $password)) {
-        header("Location: registerPage.php?error=invalidPassword");
+        header("Location: registerPage.php");
         exit();
     }
 
@@ -45,15 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sqlStatement->bind_param("ssss", $fullName, $encryptedPassword, $mobile, $email);
 
     if ($sqlStatement->execute()) {
-
-        /*
-            Location this section to send back to homepage with user ID from database
-        */
-
-        echo "Registration successful!<br>";
-        echo "Name: " . htmlspecialchars($fullName) . "<br>";
-        echo "Email: " . htmlspecialchars($email) . "<br>";
-        echo "Phone: " . htmlspecialchars($mobile) . "<br>";
+        $userID = $conn->insert_id;
+        $_SESSION['userID'] = $userID;
+        header('Location: homepage.php');
+        exit();
     } else {
         $errorMessage = "Database Insertion Error: " . $sqlStatement->error . " " . date('Y-m-d H:i:s') . "\n";
         error_log($errorMessage, 3, __DIR__ . "/../log/ConnectionError.log");
