@@ -6,3 +6,4 @@
 - **2024/10/16**: Implemented registration page
 - **2024/10/17**: Completed registration processing, including password hashing and existing email checks
 - **2024/10/18**: Started homepage and fixes in registration pages
+- **2024/10/19**: Header which changes based on login status fixed
