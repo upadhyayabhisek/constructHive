@@ -39,3 +39,5 @@ function togglePasswordVisibility() {
         toggle.src = 'images/bxs-brush.svg'; 
     }
 }
+
+

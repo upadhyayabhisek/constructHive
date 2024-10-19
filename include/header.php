@@ -1,3 +1,9 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['userID']);
+?>
+
+
 <header class="header">
     <div class="logo">
         <a href="homepage.php">
@@ -10,8 +16,14 @@
     </div>
 
     <div class="buttonContainer">
-        <button class="button">List a Job</button>
-        <button class="button">Login</button>
-        <button class="button">Signup</button>
+        <?php if ($isLoggedIn): ?>
+            <button class="button"><?php echo htmlspecialchars($_SESSION['userID']); ?></button>
+            <button class="button">List a Job</button>
+            <button class="button"><a href="include/logout.php">Logout</a></button>
+        <?php else: ?>
+            <button class="button"><a href="loginPage.php" class="link">Login</a></button>
+            <button class="button"><a href="registerPage.php" class="link">Signup</a></button>
+        <?php endif; ?>
     </div>
+
 </header>

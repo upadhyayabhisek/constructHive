@@ -7,5 +7,5 @@ function destroy_session()
     session_destroy();
 }
 destroy_session();
-header("Location: homepage.php");
+header("Location: ../homepage.php");
 exit();
