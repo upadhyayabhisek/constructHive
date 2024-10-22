@@ -1,3 +1,17 @@
+function toggleLoginPasswordVisibility() {
+    const passwordInput = document.getElementById('passwordLogin');
+    const toggleIcon = document.getElementById('togglePasswordLogin');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.src = 'images/bx-brush.svg';
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.src = 'images/bxs-brush.svg'; 
+    }
+}
+
+
 function validateForm(event) {
     event.preventDefault(); 
 

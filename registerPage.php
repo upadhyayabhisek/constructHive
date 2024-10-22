@@ -60,9 +60,6 @@ if (isset($_SESSION['userID'])) {
         </form>
     </div>
 
-    <?php
-    include 'include/footer.php';
-    ?>
 
 </body>
 
