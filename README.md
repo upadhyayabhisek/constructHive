@@ -8,3 +8,4 @@
 - **2024/10/18**: Started homepage and fixes in registration pages
 - **2024/10/19**: Header which changes based on login status fixed
 - **2024/10/22**: login page and login processing started
+- **2024/10/27**: login processes completed with admin and customer differentiation
