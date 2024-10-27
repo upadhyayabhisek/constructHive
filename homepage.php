@@ -14,7 +14,13 @@
     <?php include 'include/header.php'; ?>
 
     <main>
+        <?php
+        echo    $_SESSION['userID'];
+        echo    $_SESSION['fullName'];
+        echo    $_SESSION['role'];
+        echo    $_SESSION['userType'];
 
+        ?>
     </main>
 
     <?php include 'include/footer.php'; ?>

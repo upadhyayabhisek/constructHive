@@ -47,11 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($sqlStatement->execute()) {
         $userID = $conn->insert_id;
         $_SESSION['userID'] = $userID;
+        $_SESSION['fullName'] = $fullName;
         header('Location: homepage.php');
         exit();
     } else {
-        $errorMessage = "Database Insertion Error: " . $sqlStatement->error . " " . date('Y-m-d H:i:s') . "\n";
-        error_log($errorMessage, 3, __DIR__ . "/../log/ConnectionError.log");
+        $errorMessage = "Database Insertion Error during registration: " . $sqlStatement->error . " " . date('Y-m-d H:i:s') . "\n";
+        error_log($errorMessage, 3, __DIR__ . "/log/Login_Register.log");
         die("Database Insertion Error! Please try again later.");
     }
     $checkEmailQuery->close();
