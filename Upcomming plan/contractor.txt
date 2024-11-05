@@ -1,0 +1,9 @@
+Contractor Registration Form
+
+id pk
+userbase_id foregin from userbase
+Business Name (optional)
+Years of Experience (required)
+Area of Expertise (required)
+Certifications (optional; can include a field for details)
+Profile Picture (optional; indicate default will be used if not provided)

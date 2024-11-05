@@ -1,0 +1,94 @@
+<?php
+include_once 'include/sessionStart.php';
+
+if (!isset($_SESSION['userID'])) {
+    header("Location: homepage.php");
+    exit();
+}
+
+if ($_SESSION['userType'] == 'customer_seller') {
+    header("Location: listJob.php");
+    exit();
+}
+$fullName = $_SESSION['fullName'];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css?v=1.2">
+    <script src="js/mainJavaScript.js" defer></script>
+</head>
+<?php include 'include/header.php'; ?>
+
+<div class="sellerRegistration">
+    <h2>Welcome, <?php echo htmlspecialchars($fullName); ?>! Please complete your seller registration.</h2>
+
+    <form action="sellerRegistrationForm.php" method="post" class="sellerForm" accept-charset="UTF-8" enctype="multipart/form-data">
+        <table class="sellerRegisterTable">
+            <tr>
+                <td><label for="businessName">Business Name (optional):</label></td>
+                <td><input type="text" id="businessName" name="businessName" class="inputText" placeholder="Enter your business name"></td>
+            </tr>
+
+            <tr>
+                <td><label for="yearsExperience">Years of Experience (required):</label></td>
+                <td><input type="number" id="yearsExperience" name="yearsExperience" class="inputText" required placeholder="Enter years of experience"></td>
+            </tr>
+
+            <tr>
+                <td><label for="expertiseArea">Area of Expertise (required):</label></td>
+                <td>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Plumbing" class="inputText"> Plumber
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Electrician" class="inputText"> Electrician
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Concrete Worker" class="inputText"> Concrete Worker
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Painter" class="inputText"> Painter
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Bricklayer" class="inputText"> Bricklayer
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Mason Worker" class="inputText"> Mason Worker
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Iron Worker" class="inputText"> Iron Worker
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Carpenter" class="inputText"> Carpenter
+                    </label><br>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><label for="certifications">Certifications (optional):</label></td>
+                <td><textarea id="certifications" name="certifications" class="inputText" placeholder="Enter details"></textarea></td>
+            </tr>
+
+            <tr>
+                <td><label for="profilePicture">Profile Picture (optional):</label></td>
+                <td><input type="file" id="profilePicture" name="profilePicture" accept="image/*"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="submitBtn">Register as Seller</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<?php include 'include/footer.php'; ?>
+
+</html>

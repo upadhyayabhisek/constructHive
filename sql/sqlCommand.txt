@@ -18,3 +18,53 @@ VALUES ('Ram Khatri', '$2y$10$WjZsQp4TQ1gJxLV1C8uN0.O0Z6Gzj6Jz5giytZbWnMZcGxK1V.
 UPDATE userbase
 SET role = 'admin', user_type = 'customer_seller'
 WHERE id = 1;
+
+
+
+                             __   ___       __          __           __   __                                   
+                            |__) |__  |\ | |  \ | |\ | / _`    |  | /  \ |__) |__/                             
+___ ___ ___ ___ ___ ___ ___ |    |___ | \| |__/ | | \| \__>    |/\| \__/ |  \ |  \ ___ ___ ___ ___ ___ ___ ___ 
+                                                                                                               
+
+CREATE TABLE services (
+    service_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    service_title VARCHAR(255) NOT NULL,
+    service_description TEXT,
+    category VARCHAR(100),
+    price DECIMAL(10, 2) NOT NULL,
+    images JSON,                                                     -- Store paths or filenames in a JSON format
+    approval ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES userbase(id)
+);
+
+                                                                                                                                                           
+___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ 
+                                                                                    
+SELECT 
+    service_title, 
+    service_description, 
+    category, 
+    price, 
+    images 
+FROM 
+    services 
+WHERE 
+    approval = 'accepted';  -- Only fetch services that are accepted
+
+                                                                                    
+                                                                                    
+___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ 
+                                                                                    
+SELECT 
+    service_title, 
+    service_description, 
+    category, 
+    price, 
+    images 
+FROM 
+    services 
+WHERE 
+    approval = 'accepted' 
+    AND category = 'specific_category';  -- Replace with your desired category
