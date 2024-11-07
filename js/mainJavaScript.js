@@ -12,6 +12,34 @@ function toggleLoginPasswordVisibility() {
 }
 
 
+function validateSellerForm(event) {
+    event.preventDefault();
+
+    const businessName = document.getElementById("businessName").value.trim();
+    const yearsExperience = document.getElementById("yearsExperience").value.trim();
+    const expertiseArea = Array.from(document.querySelectorAll('input[name="expertiseArea[]"]:checked')).map(input => input.value);
+    const certifications = document.getElementById("certifications").value.trim();
+    const panCardNumber = document.getElementById("panCardNumber").value.trim();
+    const billingLocation = document.getElementById("billingLocation").value.trim();
+    const billingCity = document.getElementById("billingCity").value.trim();
+    const billingProvince = document.getElementById("billingProvince").value.trim();
+
+    if (!yearsExperience || expertiseArea.length === 0 || !panCardNumber || !billingCity || !billingLocation || !billingProvince) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    //const panRegex = /^[A-Z0-9]{9}[A-Z]{1}$/;
+
+    //    if (!panRegex.test(panCardNumber)) {
+    //    alert("Invalid PAN Card Number. Please enter a valid PAN number.");
+    //  return;
+    //}
+
+    document.querySelector(".sellerForm").submit();
+}
+
+
 function validateForm(event) {
     event.preventDefault(); 
 
