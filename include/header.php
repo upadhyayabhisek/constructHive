@@ -1,5 +1,6 @@
 <?php
 $isLoggedIn = isset($_SESSION['userID']);
+$isSeller = ($_SESSION['userType'] ?? '') !== 'customer';
 ?>
 
 <header class="header">
@@ -15,12 +16,25 @@ $isLoggedIn = isset($_SESSION['userID']);
 
     <div class="buttonContainer">
         <?php if ($isLoggedIn): ?>
+            <!--logged in -->
             <button class="button"><?php echo htmlspecialchars($_SESSION['fullName']); ?></button>
-            <button class="button"><a href="listJob.php" class="link">List a Job</a></button>
-            <button class="button"><a href="include/logout.php" class="link">Logout</a></button>
+
+            <?php if ($isSeller): ?>
+                <!--seller -->
+                <a href="listJob.php" class="button">Post a Job</a>
+            <?php else: ?>
+                <!-- not seller -->
+                <a href="sellerRegister.php" class="button">Become a Contractor</a>
+            <?php endif; ?>
+
+            <a href="include/logout.php" class="button">Logout</a>
+
         <?php else: ?>
-            <button class="button"><a href="loginPage.php" class="link">Login</a></button>
-            <button class="button"><a href="registerPage.php" class="link">Signup</a></button>
+            <!-- not logged in -->
+            <a href="loginPage.php" class="button">Login</a>
+            <a href="registerPage.php" class="button">Signup</a>
         <?php endif; ?>
     </div>
+
+
 </header>
