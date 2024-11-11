@@ -26,9 +26,9 @@ $fullName = $_SESSION['fullName'];
 <?php include 'include/header.php'; ?>
 
 <div class="sellerRegistration">
-    <h2>Welcome, <?php echo htmlspecialchars($fullName); ?>! Please complete your seller registration.</h2>
+    <h2>Welcome, <?php echo htmlspecialchars($fullName); ?>! Please complete your seller registration, to start listing jobs!</h2>
 
-    <form action="sellerRegistrationForm.php" method="post" class="sellerForm" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form action="sellerRegistrationFormProcessing.php" method="post" class="sellerForm" accept-charset="UTF-8" onsubmit="validateSellerForm(event)">
         <table class="sellerRegisterTable">
             <tr>
                 <td><label for="businessName">Business Name (optional):</label></td>
@@ -77,9 +77,28 @@ $fullName = $_SESSION['fullName'];
             </tr>
 
             <tr>
-                <td><label for="profilePicture">Profile Picture (optional):</label></td>
-                <td><input type="file" id="profilePicture" name="profilePicture" accept="image/*"></td>
+                <td><label for="panCardNumber">PAN Card Number (required):</label></td>
+                <td><input type="text" id="panCardNumber" name="panCardNumber" class="inputText" required placeholder="Enter PAN card number"></td>
             </tr>
+
+            <tr>
+                <td><label for="billingLocation">Billing Location (required):</label></td>
+                <td>
+                    <input type="text" id="billingLocation" name="billingLocation" class="inputText" required placeholder="Enter billing address">
+                    <input type="text" id="billingCity" name="billingCity" class="inputText" required placeholder="City">
+                    <select id="billingProvince" name="billingProvince" class="inputText" required>
+                        <option value="" disabled selected>Select your province</option>
+                        <option value="koshiProvince">Koshi Province</option>
+                        <option value="madeshProvince">Madesh Province</option>
+                        <option value="bagmatiProvince">Bagmati Province</option>
+                        <option value="gandakiProvince">Gandaki Province</option>
+                        <option value="lumbiniProvince">Lumbini Province</option>
+                        <option value="karnaliProvince">Karnali Province</option>
+                        <option value="sudurpashchimProvince">Sudurpashchim Province</option>
+                    </select><br>
+                </td>
+            </tr>
+
 
             <tr>
                 <td colspan="2">
