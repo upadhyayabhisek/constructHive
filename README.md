@@ -10,3 +10,4 @@
 - **2024/10/22**: login page and login processing started
 - **2024/10/27**: login processes completed with admin and customer differentiation
 - **2024/11/5**:  Started seller registration form with minor fixes
+- **2024/11/11**: Seller registration processing started and list a job page
