@@ -44,32 +44,40 @@ $fullName = $_SESSION['fullName'];
                 <td><label for="expertiseArea">Area of Expertise (required):</label></td>
                 <td>
                     <label>
-                        <input type="checkbox" name="expertiseArea[]" value="Plumbing" class="inputText"> Plumber
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="expertiseArea[]" value="Electrician" class="inputText"> Electrician
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="expertiseArea[]" value="Concrete Worker" class="inputText"> Concrete Worker
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="expertiseArea[]" value="Painter" class="inputText"> Painter
+                        <input type="checkbox" name="expertiseArea[]" value="General Contracting" class="inputText"> General Contracting
                     </label><br>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Bricklayer" class="inputText"> Bricklayer
                     </label><br>
                     <label>
-                        <input type="checkbox" name="expertiseArea[]" value="Mason Worker" class="inputText"> Mason Worker
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="expertiseArea[]" value="Iron Worker" class="inputText"> Iron Worker
+                        <input type="checkbox" name="expertiseArea[]" value="Plumber" class="inputText"> Plumber
                     </label><br>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Carpenter" class="inputText"> Carpenter
                     </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Electricians" class="inputText"> Electricians
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Painter" class="inputText"> Painter
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Steel Workers" class="inputText"> Steel Workers
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Interior Designers" class="inputText"> Interior Designers
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Landscapers" class="inputText"> Landscapers
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="Building Inspectors" class="inputText"> Building Inspectors
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="expertiseArea[]" value="QA Inspectors" class="inputText"> QA Inspectors
+                    </label><br>
                 </td>
             </tr>
-
 
             <tr>
                 <td><label for="certifications">Certifications (optional):</label></td>

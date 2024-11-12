@@ -19,3 +19,20 @@ UPDATE userbase
 SET role = 'admin', user_type = 'customer_seller'
 WHERE id = 1;
 
+
+
+
+seller registration:
+
+CREATE TABLE contractorInformation (
+    id INT AUTO_INCREMENT PRIMARY KEY,              -- Unique contractor ID
+    userbase_id INT NOT NULL,                        -- Foreign key from userbase
+    business_name VARCHAR(255),                      -- Business name (optional)
+    years_of_experience INT NOT NULL,                -- Years of experience (required)
+    area_of_expertise VARCHAR(255) NOT NULL,         -- Area of expertise (required)
+    certifications TEXT,                             -- Certifications (optional; can include details)
+    billing_location VARCHAR(255),                   -- Billing address (optional)
+    billing_city VARCHAR(100),                       -- City of the billing address
+    billing_province VARCHAR(100),                   -- Province of the billing address
+    FOREIGN KEY (userbase_id) REFERENCES userbase(id) ON DELETE CASCADE  -- Foreign key constraint
+);
