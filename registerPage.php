@@ -14,7 +14,7 @@ if (isset($_SESSION['userID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register an Account</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.1">
+    <link rel="stylesheet" href="css/styles.css?v=1.2">
     <script src="js/mainJavaScript.js" defer></script>
 </head>
 

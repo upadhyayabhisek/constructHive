@@ -1,3 +1,55 @@
+
+
+                             __   ___       __          __           __   __                                   
+                            |__) |__  |\ | |  \ | |\ | / _`    |  | /  \ |__) |__/                             
+___ ___ ___ ___ ___ ___ ___ |    |___ | \| |__/ | | \| \__>    |/\| \__/ |  \ |  \ ___ ___ ___ ___ ___ ___ ___ 
+                                                                                                               
+
+CREATE TABLE services (
+    service_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    service_title VARCHAR(255) NOT NULL,
+    service_description TEXT,
+    category VARCHAR(100),
+    price DECIMAL(10, 2) NOT NULL,
+    images JSON,                                                     -- Store paths or filenames in a JSON format
+    approval ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES userbase(id)
+);
+
+                                                                                                                                                           
+___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ 
+                                                                                    
+SELECT 
+    service_title, 
+    service_description, 
+    category, 
+    price, 
+    images 
+FROM 
+    services 
+WHERE 
+    approval = 'accepted';  -- Only fetch services that are accepted
+
+                                                                                    
+                                                                                    
+___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ 
+                                                                                    
+SELECT 
+    service_title, 
+    service_description, 
+    category, 
+    price, 
+    images 
+FROM 
+    services 
+WHERE 
+    approval = 'accepted' 
+    AND category = 'specific_category';  -- Replace with your desired category
+------------------------------------------------------------------------------------------------------
+
+
 Contractor Registration Form
 
 id pk
@@ -6,4 +58,18 @@ Business Name (optional)
 Years of Experience (required)
 Area of Expertise (required)
 Certifications (optional; can include a field for details)
-Profile Picture (optional; indicate default will be used if not provided)
+billing location, city, province
+
+
+CREATE TABLE contractorInformation (
+    id INT AUTO_INCREMENT PRIMARY KEY,              -- Unique contractor ID
+    userbase_id INT NOT NULL,                        -- Foreign key from userbase
+    business_name VARCHAR(255),                      -- Business name (optional)
+    years_of_experience INT NOT NULL,                -- Years of experience (required)
+    area_of_expertise VARCHAR(255) NOT NULL,         -- Area of expertise (required)
+    certifications TEXT,                             -- Certifications (optional; can include details)
+    billing_location VARCHAR(255),                   -- Billing address (optional)
+    billing_city VARCHAR(100),                       -- City of the billing address
+    billing_province VARCHAR(100),                   -- Province of the billing address
+    FOREIGN KEY (userbase_id) REFERENCES userbase(id) ON DELETE CASCADE  -- Foreign key constraint
+);

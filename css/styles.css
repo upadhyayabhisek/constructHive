@@ -1,10 +1,24 @@
+body {
+    padding-top: 60px; /* Create space for the fixed header */
+}
+
+
 /*header*/
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 100px; 
+    padding: 10px 20px; /* Reduce right padding to prevent overflow */
     background-color: #f8f9fa;
+    position: fixed; /* Make the header fixed */
+    top: 0; /* Position it at the top of the page */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    z-index: 1050; /* Ensure it's above the sidebar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    height: 100px; /* Ensure fixed header has a specific height */
+    overflow: hidden; /* Prevent any overflow */
 }
 
 .logo {
@@ -140,8 +154,58 @@
 }
 
 
-/*homepage*/
+/*homepage sidebar*/
 
+/* Sidebar container */
+.sidebarCategory {
+    width: 220px; /* Sidebar width */
+    background-color: #f8f9fa; /* Light background color */
+    color: black; /* Text color black */
+    padding: 20px;
+    position: fixed; /* Fix the sidebar to the left */
+    top: 80px; /* Sidebar below the header */
+    left: 0;
+    height: calc(100% - 80px); /* Sidebar height adjusted to full screen minus header height */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    z-index: 1000; /* Ensure sidebar appears above content */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    border-right: 3px solid #ccc; /* Border to the right of the sidebar */
+}
 
-/*seller*/
+/* Hide default scrollbar for sidebar */
+.sidebarCategory::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
+/* Style the table */
+.sidebarCategory table {
+    width: 100%; /* Make the table take up the full sidebar width */
+    border-collapse: collapse; /* Collapse table borders */
+}
+
+/* Sidebar list items (table rows) */
+.sidebarCategory table td {
+    padding: 10px 0; /* Space around the text */
+    text-align: left; /* Align the text to the left */
+}
+
+/* Sidebar links */
+.sidebarCategory table td a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Text color */
+    font-size: 16px; /* Font size for list items */
+    display: block; /* Make the link fill the entire table cell */
+    width: 100%; /* Ensure the link covers the full width of the cell */
+    padding: 10px 15px; /* Padding around the link text */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for links */
+.sidebarCategory table td a:hover {
+    background-color: #dcdfe1; /* Light gray hover effect */
+}
+
 

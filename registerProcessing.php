@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userID = $conn->insert_id;
         $_SESSION['userID'] = $userID;
         $_SESSION['fullName'] = $fullName;
+        $_SESSION['userType'] = "customer";
         header('Location: homepage.php');
         exit();
     } else {
