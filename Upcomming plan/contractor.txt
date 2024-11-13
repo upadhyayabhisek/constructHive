@@ -1,3 +1,8 @@
+// so basically ill create a database for userid and
+ image path and while displaying at homepage ill take 
+ userid and bring path from database and use that path to display image
+
+
 
 
                              __   ___       __          __           __   __                                   
@@ -5,18 +10,6 @@
 ___ ___ ___ ___ ___ ___ ___ |    |___ | \| |__/ | | \| \__>    |/\| \__/ |  \ |  \ ___ ___ ___ ___ ___ ___ ___ 
                                                                                                                
 
-CREATE TABLE services (
-    service_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    service_title VARCHAR(255) NOT NULL,
-    service_description TEXT,
-    category VARCHAR(100),
-    price DECIMAL(10, 2) NOT NULL,
-    images JSON,                                                     -- Store paths or filenames in a JSON format
-    approval ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES userbase(id)
-);
 
                                                                                                                                                            
 ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ 
@@ -50,26 +43,33 @@ WHERE
 ------------------------------------------------------------------------------------------------------
 
 
-Contractor Registration Form
 
-id pk
-userbase_id foregin from userbase
-Business Name (optional)
-Years of Experience (required)
-Area of Expertise (required)
-Certifications (optional; can include a field for details)
-billing location, city, province
+doing left
 
 
-CREATE TABLE contractorInformation (
-    id INT AUTO_INCREMENT PRIMARY KEY,              -- Unique contractor ID
-    userbase_id INT NOT NULL,                        -- Foreign key from userbase
-    business_name VARCHAR(255),                      -- Business name (optional)
-    years_of_experience INT NOT NULL,                -- Years of experience (required)
-    area_of_expertise VARCHAR(255) NOT NULL,         -- Area of expertise (required)
-    certifications TEXT,                             -- Certifications (optional; can include details)
-    billing_location VARCHAR(255),                   -- Billing address (optional)
-    billing_city VARCHAR(100),                       -- City of the billing address
-    billing_province VARCHAR(100),                   -- Province of the billing address
-    FOREIGN KEY (userbase_id) REFERENCES userbase(id) ON DELETE CASCADE  -- Foreign key constraint
+
+
+
+
+-- Services Table (stores general job details without image paths)
+CREATE TABLE services (
+    service_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    service_title VARCHAR(255) NOT NULL,
+    service_description TEXT,
+    category VARCHAR(100),
+    price DECIMAL(10, 2) NOT NULL,
+    approval ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES userbase(id)                  -- Assuming userbase(id) is the user table
+);
+
+-- JobImage Table (stores file paths for uploaded images)
+CREATE TABLE jobImage (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    service_id INT NOT NULL,               -- Foreign key linking to services table
+    user_id INT NOT NULL,                  -- Foreign key linking to the user who uploaded
+    file_path VARCHAR(255) NOT NULL,       -- Path to the uploaded image
+    FOREIGN KEY (service_id) REFERENCES services(service_id),   -- Link to the service
+    FOREIGN KEY (user_id) REFERENCES userbase(id)               -- Link to the user
 );

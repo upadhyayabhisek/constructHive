@@ -25,7 +25,7 @@ if (isset($_SESSION['userID'])) {
     ?>
 
     <h2>Login to Your Account</h2>
-    <div class="formContainer">
+    <div class="loginFormContainer">
         <?php if ($error === 'invalidCredentials'): ?>
             <p class="loginErrorMessage">Invalid email or password!</p>
         <?php endif; ?>

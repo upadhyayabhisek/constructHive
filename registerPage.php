@@ -25,7 +25,7 @@ if (isset($_SESSION['userID'])) {
     ?>
 
     <h2>Register an Account</h2>
-    <div class="formContainer">
+    <div class="registerFormContainer">
         <?php if ($error === 'emailExists'): ?>
             <p style="color: red;">This email address is already registered!</p>
         <?php endif; ?>

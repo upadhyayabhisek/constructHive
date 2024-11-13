@@ -31,12 +31,12 @@ if ($_SESSION['userType'] == 'customer') {
         <form action="listJobProcessing.php" method="POST" enctype="multipart/form-data" onsubmit="validateListForm(event)">
             <table>
                 <tr>
-                    <td><label for="serviceTitle">Service Title:</label></td>
+                    <td><label for="serviceTitle">Job Title:</label></td>
                     <td><input type="text" id="serviceTitle" name="serviceTitle" class="inputText" required></td>
                 </tr>
 
                 <tr>
-                    <td><label for="serviceDescription">Service Description:</label></td>
+                    <td><label for="serviceDescription">Job Description:</label></td>
                     <td><textarea id="serviceDescription" name="serviceDescription" class="inputText" rows="4" required></textarea></td>
                 </tr>
 
