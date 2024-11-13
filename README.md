@@ -12,3 +12,4 @@
 - **2024/11/5**:  Started seller registration form with minor fixes
 - **2024/11/11**: Seller registration processing started and list a job page
 - **2024/11/12**: Some css started and added sidebar
+- **2024/11/12**: Homepage display made and some css design
