@@ -29,12 +29,11 @@ function validateSellerForm(event) {
         return;
     }
 
-    //const panRegex = /^[A-Z0-9]{9}[A-Z]{1}$/;
-
-    //    if (!panRegex.test(panCardNumber)) {
-    //    alert("Invalid PAN Card Number. Please enter a valid PAN number.");
-    //  return;
-    //}
+    const panRegex = /^[0-9]{9}$/;
+    if (!panRegex.test(panCardNumber)) {
+        alert("Invalid PAN Card Number. Please enter a valid 9-digit PAN number.");
+        return;
+    }    
 
     document.querySelector(".sellerForm").submit();
 }
@@ -83,3 +82,13 @@ function togglePasswordVisibility() {
 }
 
 
+function validateListForm(event) {
+    const fileInput = document.getElementById('images');
+    const files = fileInput.files;
+    console.log('Number of files selected:', files.length);
+
+    if (files.length > 5) {
+        alert("You can upload a maximum of 5 images.");
+        event.preventDefault();
+    }
+}
