@@ -27,8 +27,9 @@ if (isset($_SESSION['userID'])) {
     <h2>Login to Your Account</h2>
     <div class="formContainer">
         <?php if ($error === 'invalidCredentials'): ?>
-            <p style="color: red;">Invalid email or password!</p>
+            <p class="loginErrorMessage">Invalid email or password!</p>
         <?php endif; ?>
+
 
         <form action="loginProcessing.php" method="post" class="loginForm" accept-charset="UTF-8" onsubmit="validateLoginForm(event)">
             <table class="loginTable">

@@ -1,9 +1,17 @@
 /* Body */
-body {
-    padding-top: 60px;
-    padding-bottom: 60px;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-top: 60px; /* to account for fixed header */
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Remove default link styling */
 a {
     text-decoration: none;
 }
@@ -158,11 +166,8 @@ a {
     }
 }
 
-/* Password Toggle Image */
-.passwordToggleImage {
-    cursor: pointer;
-    width: 20px;  
-    height: 20px;
+.main-content {
+    flex-grow: 1;
 }
 
 /* Sidebar */
@@ -177,7 +182,7 @@ a {
     height: calc(100% - 80px);
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    overflow-y: auto; 
+    overflow-y: auto;
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -198,7 +203,6 @@ a {
     text-align: left;
 }
 
-/* Sticky header for the category row */
 .sidebarCategory table td.category-header {
     font-weight: bold;
     font-size: 18px;
@@ -209,7 +213,7 @@ a {
     letter-spacing: 1px;
     position: sticky;
     top: 0;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     z-index: 10;
 }
 
@@ -235,5 +239,261 @@ a {
         height: auto;
         position: relative;
         border-right: none;
+    }
+}
+
+/* Main listProduct styling */
+.listProduct {
+    max-width: 900px;
+    margin: 80px auto 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.listProduct h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Table styling for form inputs */
+.listProduct table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.listProduct table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.listProduct table td label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* Uniform Styling for all input types */
+.listProduct table td input,
+.listProduct table td select,
+.listProduct table td textarea {
+    width: 100%;
+    padding: 10px; 
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; 
+}
+
+.listProduct table td input:focus,
+.listProduct table td select:focus,
+.listProduct table td textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Image Upload Input */
+.listProduct table td input[type="file"] {
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.listProduct table td button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+.listProduct table td button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.listProduct table td button:focus {
+    outline: 2px solid #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .listProduct {
+        padding: 15px;
+    }
+
+    .listProduct h2 {
+        font-size: 24px;
+    }
+
+    .listProduct table td {
+        padding: 10px;
+    }
+
+    .listProduct table td input,
+    .listProduct table td select,
+    .listProduct table td textarea {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .listProduct table td button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
+
+/* Seller Registration Form Styling */
+.sellerRegistration {
+    max-width: 900px;
+    margin: 40px auto; /* Adds margin for spacing from top and bottom */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.sellerRegistration h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.sellerForm {
+    width: 100%;
+}
+
+.sellerRegisterTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sellerRegisterTable td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.sellerRegisterTable td label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Input Text Styling */
+.sellerRegisterTable td input,
+.sellerRegisterTable td select,
+.sellerRegisterTable td textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.sellerRegisterTable td input:focus,
+.sellerRegisterTable td select:focus,
+.sellerRegisterTable td textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Checkbox Styling */
+.sellerRegisterTable td input[type="checkbox"] {
+    margin-right: 8px; /* Adds space between checkbox and label */
+    vertical-align: middle; /* Aligns the checkbox with the label text */
+}
+
+.sellerRegisterTable td label {
+    display: inline-block; /* Ensures label and checkbox are inline */
+    font-size: 14px; /* Consistent font size */
+    margin-bottom: 8px; /* Adds space between each checkbox label */
+    line-height: 1.5; /* Helps to space checkboxes correctly */
+}
+
+/* Create a 2-column layout for checkboxes */
+.sellerRegisterTable td div.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Creates a flexible 2-column layout */
+    gap: 15px; /* Adds spacing between the checkboxes */
+}
+
+/* Submit Button */
+.submitBtn {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+.submitBtn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.submitBtn:focus {
+    outline: 2px solid #0056b3;
+}
+
+/* Ensuring Spacing for Header & Footer */
+header {
+    margin-bottom: 20px; /* Adds spacing below the header */
+}
+
+footer {
+    margin-top: 20px; /* Adds spacing above the footer */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sellerRegistration {
+        padding: 15px;
+    }
+
+    .sellerRegistration h2 {
+        font-size: 20px;
+    }
+
+    .sellerRegisterTable td {
+        padding: 10px;
+    }
+
+    .sellerRegisterTable td input,
+    .sellerRegisterTable td select,
+    .sellerRegisterTable td textarea {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .submitBtn {
+        font-size: 14px;
+        padding: 10px 16px;
     }
 }

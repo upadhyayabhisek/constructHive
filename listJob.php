@@ -19,7 +19,7 @@ if ($_SESSION['userType'] == 'customer') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List a Job &#128296;</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.3">
+    <link rel="stylesheet" href="css/styles.css?v=1.5">
     <script src="js/mainJavaScript.js" defer></script>
 </head>
 
@@ -27,7 +27,7 @@ if ($_SESSION['userType'] == 'customer') {
     <?php include 'include/header.php'; ?>
 
     <main class="listProduct">
-        <h2>Post a New Service</h2>
+        <h2>Post a New Job</h2>
         <form action="listJobProcessing.php" method="POST" enctype="multipart/form-data" onsubmit="validateListForm(event)">
             <table>
                 <tr>

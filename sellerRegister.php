@@ -45,37 +45,37 @@ $fullName = $_SESSION['fullName'];
                 <td>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="General Contracting" class="inputText"> General Contracting
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Bricklayer" class="inputText"> Bricklayer
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Plumber" class="inputText"> Plumber
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Carpenter" class="inputText"> Carpenter
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Electricians" class="inputText"> Electricians
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Painter" class="inputText"> Painter
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Steel Workers" class="inputText"> Steel Workers
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Interior Designers" class="inputText"> Interior Designers
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Landscapers" class="inputText"> Landscapers
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="Building Inspectors" class="inputText"> Building Inspectors
-                    </label><br>
+                    </label>
                     <label>
                         <input type="checkbox" name="expertiseArea[]" value="QA Inspectors" class="inputText"> QA Inspectors
-                    </label><br>
+                    </label>
                 </td>
             </tr>
 
