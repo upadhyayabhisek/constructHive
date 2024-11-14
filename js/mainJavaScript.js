@@ -92,3 +92,17 @@ function validateListForm(event) {
         event.preventDefault();
     }
 }
+
+
+function confirmPurchase() {
+    // Ask the user to confirm by typing 'confirm'
+    var userConfirmation = prompt("Type 'confirm' to proceed with purchasing this service:");
+
+    // Check if the input is exactly 'confirm'
+    if (userConfirmation === 'confirm') {
+        return true;  // Allow the link to be followed
+    } else {
+        alert("You must type 'confirm' to proceed.");
+        return false;  // Prevent the link from being followed
+    }
+}

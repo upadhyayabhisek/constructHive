@@ -11,16 +11,19 @@ $isSeller = ($_SESSION['userType'] ?? '') !== 'customer';
     </div>
 
     <div class="searchBox">
-        <input type="text" class="searchInput" placeholder="Search...">
+        <!-- Form that will submit the search query -->
+        <form action="homepage.php" method="get">
+            <input type="text" name="search" class="searchInput" placeholder="Search..." value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
+        </form>
     </div>
 
     <div class="buttonContainer">
         <?php if ($isLoggedIn): ?>
-            <!--logged in -->
+            <!-- logged in -->
             <button class="button"><?php echo htmlspecialchars($_SESSION['fullName']); ?></button>
 
             <?php if ($isSeller): ?>
-                <!--seller -->
+                <!-- seller -->
                 <a href="listJob.php" class="button">Post a Job</a>
             <?php else: ?>
                 <!-- not seller -->
@@ -35,6 +38,4 @@ $isSeller = ($_SESSION['userType'] ?? '') !== 'customer';
             <a href="registerPage.php" class="button">Signup</a>
         <?php endif; ?>
     </div>
-
-
 </header>

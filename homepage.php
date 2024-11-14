@@ -1,18 +1,29 @@
 <?php
-// Include session start and database connection
 include_once 'include/sessionStart.php';
 include_once 'include/databaseConnection.php';
 
-// Query to fetch services and associated images from the database
+$categoryFilter = isset($_GET['category']) ? $_GET['category'] : '';
+
+$searchQuery = isset($_GET['search']) ? $_GET['search'] : '';
+
 $sql = "SELECT s.service_id, s.service_title, s.service_description, s.category, s.price, 
                ji.file_path AS image_path 
         FROM services s 
         LEFT JOIN jobImage ji ON s.service_id = ji.service_id
-        WHERE s.approval = 'accepted'"; // Only show accepted services
+        WHERE s.approval = 'accepted'";
 
-$result = $conn->query($sql);  // Execute the query
+if (!empty($categoryFilter)) {
+    $sql .= " AND s.category = '" . $conn->real_escape_string($categoryFilter) . "'";
+}
 
+if (!empty($searchQuery)) {
+    $sql .= " AND (s.service_title LIKE '%" . $conn->real_escape_string($searchQuery) . "%' 
+                OR s.service_description LIKE '%" . $conn->real_escape_string($searchQuery) . "%')";
+}
+
+$result = $conn->query($sql);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,22 +42,28 @@ $result = $conn->query($sql);  // Execute the query
     <?php include 'include/categorySidebar.php'; ?>
 
     <main>
+        <?php if (!empty($categoryFilter)): ?>
+            <h2 class="productHeading">Showing services for: <?php echo htmlspecialchars($categoryFilter); ?></h2>
+        <?php endif; ?>
+
+        <?php if (!empty($searchQuery)): ?>
+            <h2 class="productHeading">Showing results for: <?php echo htmlspecialchars($searchQuery); ?></h2>
+        <?php endif; ?>
+
         <div class="product-container">
             <?php if ($result->num_rows > 0): ?>
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <div class="product-block">
                         <div class="product-image">
-                            <!-- Display the image for the product -->
                             <?php if (!empty($row['image_path'])): ?>
                                 <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['service_title']; ?>" class="product-img">
                             <?php else: ?>
-                                <img src="default-image.jpg" alt="Default Image" class="product-img"> <!-- Default image -->
+                                <img src="default-image.jpg" alt="Default Image" class="product-img">
                             <?php endif; ?>
                         </div>
                         <div class="product-info">
                             <h3><?php echo htmlspecialchars($row['service_title']); ?></h3>
                             <p class="product-description"><?php echo htmlspecialchars($row['service_description']); ?></p>
-                            <!-- <p class="product-category">Category: <?php echo htmlspecialchars($row['category']); ?></p> -->
                             <p class="product-price">NPr. <?php echo number_format($row['price'], 2); ?></p>
                             <a href="viewProduct.php?service_id=<?php echo $row['service_id']; ?>" class="view-details-btn">View Details</a>
                         </div>
@@ -65,6 +82,5 @@ $result = $conn->query($sql);  // Execute the query
 </html>
 
 <?php
-// Close the database connection
 $conn->close();
 ?>

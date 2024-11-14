@@ -50,19 +50,20 @@ a {
 
 .searchBox {
     flex-grow: 1;
-    max-width: 550px;
+    max-width: 750px;  /* Increased max-width to make it wider */
     margin: 0 20px;
     display: flex;
     justify-content: center;
 }
 
 .searchInput {
-    width: 100%;
-    padding: 10px;
+    width: 500px;         /* Ensure input takes up the full width of searchBox */
+    padding: 12px;       /* Slightly more padding for a more spacious look */
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s;
 }
+
 
 .searchInput:focus {
     border-color: #007bff;
@@ -586,4 +587,182 @@ footer {
 
 .view-details-btn:hover {
     background-color: #0056b3;
+}
+
+/* Adjust margin for the h2 element with the product-heading class to avoid overlap with sidebar */
+.productHeading {
+    margin-left: 280px;  /* Adjust this value to match your sidebar width */
+    padding-top: 20px;   /* Optional: Adds padding to avoid overlap with fixed header */
+}
+
+
+/* Product Details Section */
+.product-details {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin-left: 300px; /* Move the entire div 200px to the right (220px sidebar + 200px offset) */
+}
+
+/* Title */
+.product-details h1 {
+    font-size: 2.2rem;  /* Larger font size for the product title */
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Category, Created Date, User Details */
+.product-details p {
+    font-size: 1.1rem; /* Slightly larger font size for product information */
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Strong Labels */
+.product-details p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Description */
+.product-details .service-description {
+    margin-top: 15px;
+    font-size: 1.1rem; /* Increased font size for better readability */
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Price */
+.product-details .product-price {
+    font-size: 1.5rem; /* Larger font size for price */
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Contractor Details Section */
+.contractor-details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contractor-details h3 {
+    font-size: 1.4rem; /* Slightly smaller font size for contractor information */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Contractor Info */
+.contractor-details p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+/* Service Images Section */
+.product-images {
+    margin-top: 30px;
+}
+
+.product-images h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.product-images .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for better grid layout */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.product-images .image-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.product-images .image-item img {
+    width: 100%;
+    height: auto;  /* Automatically adjust height to maintain aspect ratio */
+    max-width: 1200px;   /* Ensure image does not stretch beyond 1200px */
+    max-height: 800px;   /* Ensure image does not stretch beyond 800px */
+    object-fit: cover;   /* Maintain the aspect ratio and crop the image if necessary */
+    transition: transform 0.3s ease;
+}
+
+.product-images .image-item:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+
+/* Back Button */
+.product-details .button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.product-details .button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.product-details .button:focus {
+    outline: 2px solid #0056b3;
+}
+
+/* Responsive Styling for Product Details */
+@media (max-width: 768px) {
+    .product-details {
+        padding: 20px;
+        margin-left: 0; /* No margin for smaller screens */
+    }
+
+    .product-details h1 {
+        font-size: 1.8rem;
+    }
+
+    .product-details p {
+        font-size: 0.9rem;
+    }
+
+    .product-details .service-description {
+        font-size: 1rem;
+    }
+
+    .contractor-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .product-images .image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .product-images .image-item img {
+        height: 250px; /* Adjusted height for smaller screens */
+    }
+
+    .button {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
 }
