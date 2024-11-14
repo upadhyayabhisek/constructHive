@@ -78,7 +78,7 @@ $conn->close();
         <div class="product-details">
             <h1><?php echo htmlspecialchars($service['service_title']); ?></h1>
             <p><strong>Category:</strong> <?php echo htmlspecialchars($service['category']); ?></p>
-            <p><strong>Posted by:</strong> <?php echo htmlspecialchars($service['fullname']); ?> (User ID: <?php echo htmlspecialchars($service['user_id']); ?>)</p>
+            <p><strong>Posted by:</strong> <?php echo htmlspecialchars($service['fullname']); ?></p>
             <p><strong>Created at:</strong> <?php echo date('F j, Y', strtotime($service['created_at'])); ?></p>
 
             <p><strong>Description:</strong> <?php echo nl2br(htmlspecialchars($service['service_description'])); ?></p>

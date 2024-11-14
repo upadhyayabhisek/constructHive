@@ -52,6 +52,7 @@ if ($_SESSION['userType'] == 'customer') {
                             <option value="electrician">Electrician</option>
                             <option value="painter">Painter</option>
                             <option value="steel_worker">Steel Worker</option>
+                            <option value="labourer">Labourer</option>
                             <option value="interior_designer">Interior Designer</option>
                             <option value="building_inspection">Building Inspection</option>
                             <option value="qa_inspection">QA Inspection</option>

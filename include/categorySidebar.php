@@ -26,6 +26,9 @@
             <td><a href="homepage.php?category=painter"> Painter </a></td>
         </tr>
         <tr>
+            <td><a href="homepage.php?category=labourer"> Labourer </a></td>
+        </tr>
+        <tr>
             <td><a href="homepage.php?category=steel_workers"> Steel Workers </a></td>
         </tr>
         <tr>

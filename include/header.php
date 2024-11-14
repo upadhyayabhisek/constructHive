@@ -20,7 +20,9 @@ $isSeller = ($_SESSION['userType'] ?? '') !== 'customer';
     <div class="buttonContainer">
         <?php if ($isLoggedIn): ?>
             <!-- logged in -->
-            <button class="button"><?php echo htmlspecialchars($_SESSION['fullName']); ?></button>
+            <button class="button" onclick="window.location.href='profilePage.php';">
+                <?php echo htmlspecialchars($_SESSION['fullName']); ?>
+            </button>
 
             <?php if ($isSeller): ?>
                 <!-- seller -->

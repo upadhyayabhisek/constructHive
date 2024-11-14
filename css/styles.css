@@ -96,7 +96,7 @@ a {
     outline: 2px solid #0056b3;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .searchInput {
         width: 100%;
@@ -108,7 +108,7 @@ a {
     }
 }
 
-/* Footer */
+
 .footer {
     background-color: #f8f9fa;
     color: #343a40;
@@ -159,7 +159,6 @@ a {
     transform: scale(1.3);
 }
 
-/* Footer Responsive */
 @media (max-width: 768px) {
     .footerContent {
         padding: 0 10px;
@@ -250,7 +249,7 @@ a {
 
 /* Main listProduct styling */
 .listProduct {
-    max-width: 1100px; /* Increased max-width */
+    max-width: 1100px; 
     margin: 80px auto 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -274,7 +273,7 @@ a {
 }
 
 .listProduct table td {
-    padding: 15px; /* Increased padding for more space around elements */
+    padding: 15px; 
     vertical-align: middle;
 }
 
@@ -286,18 +285,17 @@ a {
     margin-bottom: 5px;
 }
 
-/* Uniform Styling for all input types */
 .listProduct table td input,
 .listProduct table td select,
 .listProduct table td textarea {
-    width: 100%; /* Make input fields take full width */
-    padding: 12px; /* Increased padding for larger input boxes */
-    font-size: 15px; /* Slightly larger font size */
+    width: 100%; 
+    padding: 12px;
+    font-size: 15px; 
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    box-sizing: border-box; 
 }
 
 .listProduct table td input:focus,
@@ -307,15 +305,14 @@ a {
     outline: none;
 }
 
-/* Image Upload Input */
 .listProduct table td input[type="file"] {
-    padding: 8px; /* Increased padding */
-    font-size: 15px; /* Slightly larger font size */
+    padding: 8px; 
+    font-size: 15px;
 }
 
 /* Submit Button */
 .listProduct table td button {
-    padding: 14px 22px; /* Increased padding for a larger button */
+    padding: 14px 22px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -347,7 +344,7 @@ a {
     }
 
     .listProduct table td {
-        padding: 12px; /* Adjusted padding for smaller screens */
+        padding: 12px; 
     }
 
     .listProduct table td input,
@@ -367,7 +364,7 @@ a {
 /* Seller Registration Form Styling */
 .sellerRegistration {
     max-width: 900px;
-    margin: 40px auto; /* Adds margin for spacing from top and bottom */
+    margin: 40px auto; 
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -427,22 +424,22 @@ a {
 
 /* Checkbox Styling */
 .sellerRegisterTable td input[type="checkbox"] {
-    margin-right: 8px; /* Adds space between checkbox and label */
-    vertical-align: middle; /* Aligns the checkbox with the label text */
+    margin-right: 8px; 
+    vertical-align: middle; 
 }
 
 .sellerRegisterTable td label {
-    display: inline-block; /* Ensures label and checkbox are inline */
-    font-size: 14px; /* Consistent font size */
-    margin-bottom: 8px; /* Adds space between each checkbox label */
-    line-height: 1.5; /* Helps to space checkboxes correctly */
+    display: inline-block; 
+    font-size: 14px;
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 /* Create a 2-column layout for checkboxes */
 .sellerRegisterTable td div.checkbox-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Creates a flexible 2-column layout */
-    gap: 15px; /* Adds spacing between the checkboxes */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+    gap: 15px; 
 }
 
 /* Submit Button */
@@ -470,11 +467,11 @@ a {
 
 /* Ensuring Spacing for Header & Footer */
 header {
-    margin-bottom: 20px; /* Adds spacing below the header */
+    margin-bottom: 20px; 
 }
 
 footer {
-    margin-top: 20px; /* Adds spacing above the footer */
+    margin-top: 20px; 
 }
 
 /* Responsive Styles */
@@ -508,10 +505,10 @@ footer {
 /* Adjusted compact grid layout for the product container */
 .product-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust to smaller width */
-    gap: 15px; /* Reduced gap between items */
-    padding: 15px; /* Less padding around the container */
-    margin-left: 260px; /* Push content to the right of the sidebar */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 15px; 
+    padding: 15px; 
+    margin-left: 260px; 
 }
 
 /* Compact product block design */
@@ -528,12 +525,12 @@ footer {
 }
 
 .product-block:hover {
-    transform: scale(1.03); /* Slight zoom effect with less scaling */
+    transform: scale(1.03); 
 }
 
 /* Reduced image height and compact styling */
 .product-image {
-    height: 160px; /* Reduced height for a more compact image */
+    height: 160px; 
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -542,35 +539,35 @@ footer {
 
 .product-image img {
     width: 100%;
-    object-fit: cover; /* Keeps the image responsive */
+    object-fit: cover; 
 }
 
 /* Compact product info styling */
 .product-info {
     flex-grow: 1;
-    padding: 8px; /* Less padding around the info */
+    padding: 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    gap: 3px; /* Reduced gap between elements */
+    gap: 3px;
 }
 
 .product-info h3 {
-    font-size: 1.1rem; /* Smaller font size for titles */
-    margin: 0; /* Remove default margin */
+    font-size: 1.1rem; 
+    margin: 0; 
 }
 
 .product-info .product-description {
-    font-size: 0.95rem; /* Smaller font for descriptions */
-    margin: 0; /* Remove margin to eliminate extra space */
-    flex-grow: 1; /* Ensures the description doesn't push the footer */
+    font-size: 0.95rem;
+    margin: 0; 
+    flex-grow: 1; 
 }
 
 .product-info .product-category,
 .product-info .product-price {
-    font-size: 1rem; /* Smaller font size for category and price */
-    margin: 0; /* Remove margin to eliminate extra space */
+    font-size: 1rem;
+    margin: 0; 
 }
 
 .view-details-btn {
@@ -589,10 +586,10 @@ footer {
     background-color: #0056b3;
 }
 
-/* Adjust margin for the h2 element with the product-heading class to avoid overlap with sidebar */
+
 .productHeading {
-    margin-left: 280px;  /* Adjust this value to match your sidebar width */
-    padding-top: 20px;   /* Optional: Adds padding to avoid overlap with fixed header */
+    margin-left: 280px;  
+    padding-top: 20px;   
 }
 
 
@@ -606,12 +603,12 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin-left: 300px; /* Move the entire div 200px to the right (220px sidebar + 200px offset) */
+    margin-left: 300px; 
 }
 
 /* Title */
 .product-details h1 {
-    font-size: 2.2rem;  /* Larger font size for the product title */
+    font-size: 2.2rem;  
     color: #333;
     margin-bottom: 20px;
     text-align: center;
@@ -619,7 +616,7 @@ footer {
 
 /* Category, Created Date, User Details */
 .product-details p {
-    font-size: 1.1rem; /* Slightly larger font size for product information */
+    font-size: 1.1rem;
     color: #555;
     margin-bottom: 10px;
 }
@@ -633,14 +630,14 @@ footer {
 /* Description */
 .product-details .service-description {
     margin-top: 15px;
-    font-size: 1.1rem; /* Increased font size for better readability */
+    font-size: 1.1rem; 
     color: #444;
     line-height: 1.6;
 }
 
 /* Price */
 .product-details .product-price {
-    font-size: 1.5rem; /* Larger font size for price */
+    font-size: 1.5rem;
     color: #007bff;
     font-weight: bold;
     margin-top: 20px;
@@ -656,7 +653,7 @@ footer {
 }
 
 .contractor-details h3 {
-    font-size: 1.4rem; /* Slightly smaller font size for contractor information */
+    font-size: 1.4rem; 
     color: #333;
     margin-bottom: 15px;
 }
@@ -680,7 +677,7 @@ footer {
 
 .product-images .image-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for better grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
     margin-top: 20px;
 }
@@ -694,15 +691,15 @@ footer {
 
 .product-images .image-item img {
     width: 100%;
-    height: auto;  /* Automatically adjust height to maintain aspect ratio */
-    max-width: 1200px;   /* Ensure image does not stretch beyond 1200px */
-    max-height: 800px;   /* Ensure image does not stretch beyond 800px */
-    object-fit: cover;   /* Maintain the aspect ratio and crop the image if necessary */
+    height: auto;
+    max-width: 1200px;   
+    max-height: 800px;  
+    object-fit: cover;   
     transition: transform 0.3s ease;
 }
 
 .product-images .image-item:hover img {
-    transform: scale(1.05); /* Zoom effect on hover */
+    transform: scale(1.05); 
 }
 
 
@@ -766,4 +763,3 @@ footer {
         font-size: 0.95rem;
     }
 }
-
