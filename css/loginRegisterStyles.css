@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-top: 60px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+body {
+    background-image: url('../images/illustration-construction-site.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #444;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.loginFormContainer, .registerFormContainer {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.loginTable, .registrationTable {
+    width: 100%;
+    margin-bottom: 20px;
+    border-spacing: 0;
+}
+
+.loginTable td, .registrationTable td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.inputText {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-size: 1.2em;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputText:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+#passwordLogin {
+    padding-right: 40px;
+}
+
+.passwordToggleImage {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+}
+
+button, .submitButton, input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover, .submitButton:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.loginErrorMessage {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.loginTable td span, .registrationTable td span {
+    text-align: center;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    .loginFormContainer, .registerFormContainer {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .inputText {
+        font-size: 1em;
+    }
+
+    .submitButton {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}

@@ -14,7 +14,7 @@ if (isset($_SESSION['userID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to Your Account</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.1">
+    <link rel="stylesheet" href="css/loginRegisterStyles.css?v=1.2">
     <script src="js/mainJavaScript.js" defer></script>
 </head>
 
@@ -40,8 +40,10 @@ if (isset($_SESSION['userID'])) {
                 <tr>
                     <td><label for="passwordLogin">Password:</label></td>
                     <td>
-                        <input type="password" id="passwordLogin" name="passwordLogin" class="inputText" required>
-                        <img id="togglePasswordLogin" src="images/bxs-brush.svg" alt="Toggle Password Visibility" class="passwordToggleImage" onclick="toggleLoginPasswordVisibility()">
+                        <div class="password-container">
+                            <input type="password" id="passwordLogin" name="passwordLogin" class="inputText" required>
+                            <img id="togglePasswordLogin" src="images/bxs-brush.svg" alt="Toggle Password Visibility" class="passwordToggleImage" onclick="toggleLoginPasswordVisibility()">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -49,6 +51,12 @@ if (isset($_SESSION['userID'])) {
                         <input type="submit" value="Login" class="submitButton">
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="2">
+                        <span><a href="registerPage.php">Don't have an account? Register Now!</a></span>
+                    </td>
+                </tr>
+
             </table>
         </form>
     </div>

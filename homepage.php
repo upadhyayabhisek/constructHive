@@ -46,8 +46,8 @@ $result = $conn->query($sql);  // Execute the query
                         <div class="product-info">
                             <h3><?php echo htmlspecialchars($row['service_title']); ?></h3>
                             <p class="product-description"><?php echo htmlspecialchars($row['service_description']); ?></p>
-                            <p class="product-category">Category: <?php echo htmlspecialchars($row['category']); ?></p>
-                            <p class="product-price">NPr.<?php echo number_format($row['price'], 2); ?></p>
+                            <!-- <p class="product-category">Category: <?php echo htmlspecialchars($row['category']); ?></p> -->
+                            <p class="product-price">NPr. <?php echo number_format($row['price'], 2); ?></p>
                             <a href="viewProduct.php?service_id=<?php echo $row['service_id']; ?>" class="view-details-btn">View Details</a>
                         </div>
                     </div>

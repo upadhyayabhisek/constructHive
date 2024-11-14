@@ -14,7 +14,7 @@ if (isset($_SESSION['userID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register an Account</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.2">
+    <link rel="stylesheet" href="css/loginRegisterStyles.css?v=1.2">
     <script src="js/mainJavaScript.js" defer></script>
 </head>
 
@@ -27,7 +27,7 @@ if (isset($_SESSION['userID'])) {
     <h2>Register an Account</h2>
     <div class="registerFormContainer">
         <?php if ($error === 'emailExists'): ?>
-            <p style="color: red;">This email address is already registered!</p>
+            <p class="loginErrorMessage">This email address is already registered!</p>
         <?php endif; ?>
 
         <form action="registerProcessing.php" method="post" class="registrationForm" accept-charset="UTF-8" onsubmit="validateForm(event)">
@@ -47,8 +47,10 @@ if (isset($_SESSION['userID'])) {
                 <tr>
                     <td><label for="passwordRegister">Password:</label></td>
                     <td>
-                        <input type="password" id="passwordRegister" name="passwordRegister" class="inputText" required>
-                        <img id="togglePassword" src="images/bxs-brush.svg" alt="Toggle Password Visibility" class="passwordToggleImage" onclick="togglePasswordVisibility()">
+                        <div class="password-container">
+                            <input type="password" id="passwordRegister" name="passwordRegister" class="inputText" required>
+                            <img id="togglePassword" src="images/bxs-brush.svg" alt="Toggle Password Visibility" class="passwordToggleImage" onclick="togglePasswordVisibility()">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -56,10 +58,14 @@ if (isset($_SESSION['userID'])) {
                         <input type="submit" value="Register" class="submitButton">
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <span><a href="loginPage.php">Already registered? Login Now!</a></span>
+                    </td>
+                </tr>
             </table>
         </form>
     </div>
-
 
 </body>
 
