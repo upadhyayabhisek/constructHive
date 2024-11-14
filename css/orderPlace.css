@@ -1,0 +1,255 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    margin: 1em 0;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1050;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.searchBox {
+    flex-grow: 1;
+    max-width: 750px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchInput {
+    width: 500px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.searchInput:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.button:focus {
+    outline: 2px solid #0056b3;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #f8f9fa;
+    color: #343a40;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+    position: relative;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footerContact {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.footerContact a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footerContact a:hover {
+    text-decoration: underline;
+}
+
+.footerSocial {
+    margin-top: 15px;
+}
+
+.footerSocial a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footerSocial img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.footerSocial img:hover {
+    transform: scale(1.3);
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    .footerContent {
+        padding: 0 10px;
+    }
+
+    .footerSocial img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Main Content Styles */
+main {
+    width: 80%;
+    margin: 130px auto 30px; /* Adjust for the header's fixed position */
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Order Confirmation Section */
+.order-confirmation {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-confirmation h1 {
+    color: #4CAF50;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.order-confirmation p {
+    font-size: 16px;
+    color: #555;
+}
+
+.order-confirmation h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Order Details Section */
+.order-confirmation .order-details, 
+.order-confirmation .service-details, 
+.order-confirmation .customer-details {
+    margin-bottom: 30px;
+}
+
+.order-confirmation .order-details p, 
+.order-confirmation .service-details p, 
+.order-confirmation .customer-details p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.order-confirmation .order-details p strong, 
+.order-confirmation .service-details p strong, 
+.order-confirmation .customer-details p strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Status Styles */
+.order-confirmation .status {
+    font-weight: bold;
+    color: #333;
+}
+
+.order-confirmation .status.pending {
+    color: #ff9800; /* Orange for pending status */
+}
+
+.order-confirmation .status.completed {
+    color: #4CAF50; /* Green for completed status */
+}
+
+/* Divider Styles */
+hr {
+    border: 0;
+    border-top: 2px solid #f1f1f1;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+
+    .order-confirmation {
+        padding: 20px;
+    }
+}

@@ -11,9 +11,6 @@ create table userbase(
     date_of_creation timestamp default current_timestamp
 );
 
-INSERT INTO userbase (fullname, password, mobile_number, email)
-VALUES ('Ram Khatri', '$2y$10$WjZsQp4TQ1gJxLV1C8uN0.O0Z6Gzj6Jz5giytZbWnMZcGxK1V.ADO', '9801234567', 'ram.khatri@example.com');
-
 
 UPDATE userbase
 SET role = 'admin', user_type = 'customer_seller'
@@ -35,4 +32,39 @@ CREATE TABLE contractorInformation (
     billing_city VARCHAR(100),                       -- City of the billing address
     billing_province VARCHAR(100),                   -- Province of the billing address
     FOREIGN KEY (userbase_id) REFERENCES userbase(id) ON DELETE CASCADE  -- Foreign key constraint
+);
+
+
+CREATE TABLE ordersDB (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,     -- Unique ID for the order
+    customer_id INT NOT NULL,                    -- ID of the customer placing the order
+    service_id INT NOT NULL,                     -- ID of the service being ordered
+    status ENUM('pending', 'completed') DEFAULT 'pending',  -- Status of the order (default: 'pending')
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Date and time the order was placed (auto-set to current timestamp)
+    FOREIGN KEY (customer_id) REFERENCES userbase(id) ON DELETE CASCADE,  -- Link to customer (userbase table)
+    FOREIGN KEY (service_id) REFERENCES services(service_id) ON DELETE CASCADE  -- Link to service (services table)
+);
+
+
+-- Services Table (stores general job details without image paths)
+CREATE TABLE services (
+    service_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    service_title VARCHAR(255) NOT NULL,
+    service_description TEXT,
+    category VARCHAR(100),
+    price DECIMAL(10, 2) NOT NULL,
+    approval ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES userbase(id)                  -- Assuming userbase(id) is the user table
+);
+
+-- JobImage Table (stores file paths for uploaded images)
+CREATE TABLE jobImage (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    service_id INT NOT NULL,               -- Foreign key linking to services table
+    user_id INT NOT NULL,                  -- Foreign key linking to the user who uploaded
+    file_path VARCHAR(255) NOT NULL,       -- Path to the uploaded image
+    FOREIGN KEY (service_id) REFERENCES services(service_id),   -- Link to the service
+    FOREIGN KEY (user_id) REFERENCES userbase(id)               -- Link to the user
 );

@@ -1,7 +1,7 @@
 <?php
 include_once 'include/sessionStart.php';
 include_once 'include/databaseConnection.php';
-$isLoggedIn = isset($_SESSION['userId']);
+$isLoggedIn = isset($_SESSION['userID']);
 if (!isset($_GET['service_id']) || !is_numeric($_GET['service_id'])) {
     header('Location: homepage.php');
     exit();
@@ -108,7 +108,7 @@ $conn->close();
 
             <?php if ($isLoggedIn): ?>
 
-                <a href="viewProductBuyProcessing.php?service_id=<?php echo $service_id; ?>"
+                <a href="placeOrder.php?service_id=<?php echo $service_id; ?>"
                     class="button"
                     onclick="return confirmPurchase();">
                     Buy service
