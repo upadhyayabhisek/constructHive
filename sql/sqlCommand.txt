@@ -45,6 +45,9 @@ CREATE TABLE ordersDB (
     FOREIGN KEY (service_id) REFERENCES services(service_id) ON DELETE CASCADE  -- Link to service (services table)
 );
 
+ALTER TABLE ordersDB
+ADD COLUMN customer_address VARCHAR(255);
+
 
 -- Services Table (stores general job details without image paths)
 CREATE TABLE services (

@@ -1,0 +1,59 @@
+// Define the database structure in DBML format
+
+Table userbase {
+  id integer [primary key]
+  fullname varchar(50) [not null]
+  password varchar(255) [not null]
+  mobile_number varchar(15) [not null]
+  email varchar(255) [not null]
+  role enum('customer', 'admin') [default: 'customer']
+  user_type enum('customer', 'customer_seller') [default: 'customer']
+  date_of_creation timestamp 
+}
+
+Table contractorInformation {
+  id integer [primary key]
+  userbase_id integer [not null]
+  business_name varchar(255)
+  years_of_experience integer [not null]
+  area_of_expertise varchar(255) [not null]
+  certifications text
+  billing_location varchar(255)
+  billing_city varchar(100)
+  billing_province varchar(100)
+}
+
+Table services {
+  service_id integer [primary key]
+  user_id integer [not null]
+  service_title varchar(255) [not null]
+  service_description text
+  category varchar(100)
+  price decimal(10, 2) [not null]
+  approval enum('pending', 'accepted', 'rejected') [default: 'pending']
+  created_at timestamp 
+}
+
+Table ordersDB {
+  order_id integer [primary key]
+  customer_id integer [not null]
+  service_id integer [not null]
+  status enum('pending', 'in_progress', 'completed', 'canceled') [default: 'pending']
+  customer_address varchar(255)
+  order_date timestamp 
+}
+
+Table jobImage {
+  id integer [primary key]
+  service_id integer [not null]
+  user_id integer [not null]
+  file_path varchar(255) [not null]
+}
+
+// Define relationships between tables
+Ref: contractorInformation.userbase_id > userbase.id // contractor information references userbase
+Ref: services.user_id > userbase.id // services belong to a user (contractor)
+Ref: ordersDB.customer_id > userbase.id // orders belong to a customer
+Ref: ordersDB.service_id > services.service_id // orders are for a service
+Ref: jobImage.service_id > services.service_id // job images are related to services
+Ref: jobImage.user_id > userbase.id // job images uploaded by a user
