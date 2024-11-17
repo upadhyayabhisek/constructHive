@@ -48,6 +48,9 @@ CREATE TABLE ordersDB (
 ALTER TABLE ordersDB
 ADD COLUMN customer_address VARCHAR(255);
 
+ALTER TABLE ordersDB
+MODIFY COLUMN status ENUM('pending', 'completed', 'cancelled') DEFAULT 'pending';
+
 
 -- Services Table (stores general job details without image paths)
 CREATE TABLE services (

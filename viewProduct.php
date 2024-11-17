@@ -107,12 +107,17 @@ $conn->close();
             </div>
 
             <?php if ($isLoggedIn): ?>
+                <form action="placeOrder.php" method="GET">
+                    <br>
+                    <textarea name="address" id="address" placeholder="Please enter your address!" required style="width: 300px; height: 50px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; resize: vertical;"></textarea>
+                    <br>
+                    <input type="hidden" name="service_id" value="<?php echo $service_id; ?>">
 
-                <a href="placeOrder.php?service_id=<?php echo $service_id; ?>"
-                    class="button"
-                    onclick="return confirmPurchase();">
-                    Buy service
-                </a>
+                    <button type="submit" class="button" onclick="return confirmPurchase();">
+                        Buy service
+                    </button>
+                </form>
+
             <?php else: ?>
                 <a href="loginPage.php" class="button">
                     Please log in to buy service

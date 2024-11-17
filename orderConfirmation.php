@@ -1,20 +1,29 @@
 <?php
 include_once 'include/sessionStart.php';
 include_once 'include/databaseConnection.php';
+if (!isset($_SESSION['userID'])) {
+    header("Location: homepage.php");
+    exit();
+}
+
+// Check if order_id is set and valid
 if (!isset($_GET['order_id']) || !is_numeric($_GET['order_id'])) {
     header("Location: homepage.php");
+    exit();
 }
 
 $order_id = (int) $_GET['order_id'];
 
-// Fetch order details, service details, and customer details
+// Fetch order details, service details, and contractor details
 $sql_order = "
     SELECT o.order_id, o.customer_id, o.service_id, o.status, o.order_date,
            s.service_title, s.price, s.category,
-           u.fullname AS customer_name, u.mobile_number, u.email
+           u.fullname AS customer_name, u.mobile_number AS customer_phone, u.email AS customer_email, o.customer_address,
+           c.fullname AS contractor_name, c.mobile_number AS contractor_phone, c.email AS contractor_email
     FROM ordersDB o
     JOIN services s ON o.service_id = s.service_id
-    JOIN userbase u ON o.customer_id = u.id
+    JOIN userbase u ON o.customer_id = u.id  -- Customer information
+    JOIN userbase c ON s.user_id = c.id  -- Contractor information (who posted the job)
     WHERE o.order_id = $order_id
 ";
 
@@ -35,10 +44,16 @@ $service_title = $order['service_title'];
 $price = $order['price'];
 $category = $order['category'];
 $customer_name = $order['customer_name'];
-$mobile_number = $order['mobile_number'];
-$email = $order['email'];
+$customer_phone = $order['customer_phone'];
+$customer_email = $order['customer_email'];
+$customer_address = $order['customer_address']; // Fetch customer address
 $order_date = date('F j, Y', strtotime($order['order_date']));
 $status = ucfirst($order['status']);
+
+// Contractor details
+$contractor_name = $order['contractor_name'];
+$contractor_phone = $order['contractor_phone'];
+$contractor_email = $order['contractor_email'];
 
 $conn->close();
 ?>
@@ -74,10 +89,13 @@ $conn->close();
             <p><strong>Price:</strong> NPr. <?php echo number_format($price, 2); ?></p>
             <p><strong>Category:</strong> <?php echo htmlspecialchars($category); ?></p>
 
-            <h3>Customer Details</h3>
-            <p><strong>Customer Name:</strong> <?php echo htmlspecialchars($customer_name); ?></p>
-            <p><strong>Phone Number:</strong> <?php echo htmlspecialchars($mobile_number); ?></p>
-            <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
+            <h3>Contractor Details</h3>
+            <p><strong>Contractor Name:</strong> <?php echo htmlspecialchars($contractor_name); ?></p>
+            <p><strong>Phone Number:</strong> <?php echo htmlspecialchars($contractor_phone); ?></p>
+            <p><strong>Email:</strong> <?php echo htmlspecialchars($contractor_email); ?></p>
+
+            <h3>Customer Address</h3>
+            <p><strong>Address:</strong> <?php echo htmlspecialchars($customer_address); ?></p>
 
             <hr>
 

@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-    background-image: url('../images/illustration-construction-site.jpg'); 
+    background-image: url('../images/illustration-construction-site.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -103,9 +103,6 @@ a {
     }
 }
 
-
-
-/* Container for Profile and Orders */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -116,14 +113,12 @@ a {
     border-radius: 8px;
 }
 
-/* Title */
 .titleProfile {
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
 }
 
-/* Button Container */
 .buttons-container {
     display: flex;
     justify-content: center;
@@ -131,7 +126,6 @@ a {
     margin-bottom: 20px;
 }
 
-/* Button Styles */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -146,11 +140,13 @@ button:hover {
     background-color: #007bff;
 }
 
-/* Content Sections */
 .content-div {
     display: none;
     padding: 20px;
     margin-top: 20px;
+    overflow-x: auto;
+    max-height: 500px; /* Limit the height of the content-div */
+    overflow-y: auto;  /* Enable vertical scrolling */
 }
 
 .content-div table {
@@ -161,56 +157,25 @@ button:hover {
     overflow: hidden;
 }
 
+
 .content-div th, .content-div td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
 }
 
-/* Table Row Hover */
 .content-div tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Ensure Table Fits within the Container and Add Horizontal Scroll if Needed */
-.content-div table {
-    width: 100%;
-    table-layout: fixed;
-}
-
-.content-div table, .content-div th, .content-div td {
-    word-wrap: break-word;
-}
-
-/* Add horizontal scrolling for tables that overflow */
 .content-div {
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: auto;
 }
 
 .content-div table {
-    min-width: 800px;  /* Set a minimum width for the table */
+    min-width: 800px;
 }
 
 .content-div th, .content-div td {
-    white-space: nowrap;  /* Prevent text from wrapping */
-}
-
-/* Additional Styling for Profile */
-p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-strong {
-    font-weight: bold;
-}
-
-.view-link {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.view-link:hover {
-    text-decoration: underline;
+    white-space: nowrap;
 }

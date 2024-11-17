@@ -100,7 +100,7 @@ $conn->close();
     <main class="main-container">
         <div id="manageUsers" class="adminSection">
             <h2>Manage Users</h2>
-            <p>Here you can view and manage all users in the system.</p>
+            <p></p>
             <table>
                 <thead>
                     <tr>
@@ -140,7 +140,7 @@ $conn->close();
 
         <div id="managePendingJobs" class="adminSection">
             <h2>Manage Pending Jobs</h2>
-            <p>Here you can view and approve or reject pending jobs posted by users.</p>
+            <p></p>
 
             <table>
                 <thead>
@@ -187,7 +187,7 @@ $conn->close();
         <!-- Contractor Information Section -->
         <div id="contractorInformation" class="adminSection">
             <h2>Contractor Information</h2>
-            <p>View contractor details including business information, certifications, and more.</p>
+            <p></p>
 
             <?php if (count($contractors) > 0): ?>
                 <div class="contractorInformation">

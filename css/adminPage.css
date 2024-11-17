@@ -6,12 +6,11 @@ body {
     padding: 0;
 }
 
-/* Button Styles */
+
 .buttonContainer button {
     margin-right: 15px;
     padding: 10px 20px;
     background-color: #007bff;
-    /* Blue color */
     color: white;
     border: none;
     border-radius: 5px;
@@ -22,10 +21,8 @@ body {
 
 .buttonContainer button:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
 }
 
-/* Admin Section Styles */
 .adminSection {
     display: none;
     margin-top: 20px;
@@ -36,11 +33,9 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Header Styles */
 .adminSection h2 {
     font-size: 24px;
     color: #007bff;
-    /* Blue color for header */
     margin-bottom: 20px;
 }
 
@@ -50,7 +45,6 @@ body {
     border-collapse: collapse;
     margin-top: 20px;
     border: 1px solid #007bff;
-    /* Blue border around table */
 }
 
 #manageUsers th,
@@ -59,7 +53,6 @@ body {
 #managePendingJobs td {
     padding: 12px 15px;
     border: 1px solid #ddd;
-    /* Slight border for all table cells */
     text-align: left;
     font-size: 16px;
 }
@@ -67,9 +60,7 @@ body {
 #manageUsers th,
 #managePendingJobs th {
     background-color: #f4f4f4;
-    /* Lighter background for headers */
     color: #333;
-    /* Dark text for better contrast */
 }
 
 #manageUsers td,
@@ -80,43 +71,35 @@ body {
 #manageUsers tr:hover td,
 #managePendingJobs tr:hover td {
     background-color: #e1f1ff;
-    /* Light blue on hover */
 }
 
 .button {
     padding: 10px 20px;
-    /* Uniform padding for all buttons */
     font-size: 14px;
-    /* Consistent font size */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     background-color: #007bff;
-    /* Blue color for buttons */
 }
 
 .button:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
 }
 
 .button-ban {
     background-color: #007bff;
-    /* Blue color for all buttons (no red) */
 }
 
 .button-ban:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
 }
 
 #managePendingJobs {
     margin-top: 20px;
 }
 
-/* Media Queries for responsiveness */
 @media screen and (max-width: 768px) {
 
     #manageUsers table th,
@@ -136,34 +119,25 @@ body {
     }
 }
 
-/* Contractor Information Section */
+
 #contractorInformation {
     margin-top: 50px;
-    /* Add 50px margin on top */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     max-width: 80%;
-    /* Make the container smaller by limiting its width */
     margin-left: auto;
-    /* Center horizontally */
     margin-right: auto;
-    /* Center horizontally */
     max-height: 500px;
-    /* Adjusted height to make it smaller */
     overflow-y: auto;
-    /* Vertical scroll when content exceeds the max-height */
     overflow-x: hidden;
-    /* Hide horizontal overflow */
 }
 
 .contractorInformation {
     max-height: 400px;
-    /* Limit the height of the contractor cards section */
     overflow-y: auto;
-    /* Ensure scrolling for contractor cards if content exceeds max-height */
 }
 
 .contractor-card {

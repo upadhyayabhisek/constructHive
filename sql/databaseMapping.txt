@@ -38,7 +38,7 @@ Table ordersDB {
   order_id integer [primary key]
   customer_id integer [not null]
   service_id integer [not null]
-  status enum('pending', 'in_progress', 'completed', 'canceled') [default: 'pending']
+  status enum('pending', 'completed', 'canceled') [default: 'pending']
   customer_address varchar(255)
   order_date timestamp 
 }

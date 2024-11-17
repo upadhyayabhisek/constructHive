@@ -1,4 +1,4 @@
-/* General Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +7,8 @@
 }
 
 body {
+    
+    background-image: url('../images/illustration-construction-site.jpg');
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
@@ -26,7 +28,6 @@ p {
     margin: 1em 0;
 }
 
-/* Header Styles */
 .header {
     display: flex;
     justify-content: center;
@@ -101,7 +102,6 @@ p {
     outline: 2px solid #0056b3;
 }
 
-/* Footer Styles */
 .footer {
     background-color: #f8f9fa;
     color: #343a40;
@@ -152,7 +152,6 @@ p {
     transform: scale(1.3);
 }
 
-/* Footer Responsive */
 @media (max-width: 768px) {
     .footerContent {
         padding: 0 10px;
@@ -164,17 +163,15 @@ p {
     }
 }
 
-/* Main Content Styles */
 main {
     width: 80%;
-    margin: 130px auto 30px; /* Adjust for the header's fixed position */
+    margin: 130px auto 30px; 
     max-width: 1200px;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Order Confirmation Section */
 .order-confirmation {
     padding: 30px;
     background-color: #fff;
@@ -200,7 +197,6 @@ main {
     font-weight: 600;
 }
 
-/* Order Details Section */
 .order-confirmation .order-details, 
 .order-confirmation .service-details, 
 .order-confirmation .customer-details {
@@ -222,28 +218,25 @@ main {
     font-weight: bold;
 }
 
-/* Status Styles */
 .order-confirmation .status {
     font-weight: bold;
     color: #333;
 }
 
 .order-confirmation .status.pending {
-    color: #ff9800; /* Orange for pending status */
+    color: #ff9800; 
 }
 
 .order-confirmation .status.completed {
-    color: #4CAF50; /* Green for completed status */
-}
+    color: #4CAF50;
 
-/* Divider Styles */
+}
 hr {
     border: 0;
     border-top: 2px solid #f1f1f1;
     margin: 20px 0;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     main {
         width: 90%;
