@@ -4,7 +4,7 @@
             <p>&copy; <?php echo date('Y'); ?><span style="font-weight: bold; color: #333; font-size: 20px;"> constructHive</span>. All rights reserved.</p>
 
             <div class="footerContact">
-                <p>Contact us: <a href="mailto:info@yourplatform.com">contact@contact.com</a></p>
+                <p>Contact us: <a href="mailto:info@yourplatform.com">contact@constructHive.com</a></p>
             </div>
             <div class="footerSocial">
                 <a href="https://facebook.com" target="_blank">

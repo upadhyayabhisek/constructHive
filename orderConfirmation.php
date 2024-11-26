@@ -100,7 +100,9 @@ $conn->close();
             <hr>
 
             <p>If you have any questions about your order, please contact the contractor directly using the information provided above.</p>
+            <button onclick="window.location.href='orderReciept.php?order_id=<?php echo $order_id; ?>';">Download Receipt</button>
         </div>
+
     </main>
 
     <?php include 'include/footer.php'; ?>
