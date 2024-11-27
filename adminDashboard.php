@@ -121,13 +121,13 @@ $conn->close();
                             <td>
 
                                 <?php if ($user['role'] != 'admin'): ?>
-                                    <form action="adminDashboard.php" method="post" style="display:inline;">
+                                    <form action="promoteUser.php" method="post" style="display:inline;">
                                         <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
                                         <button type="submit" name="promote_user" class="button">Promote to Admin</button>
                                     </form>
                                 <?php endif; ?>
 
-                                <form action="adminDashboard.php" method="post" style="display:inline;">
+                                <form action="deleteUser.php" method="post" style="display:inline;">
                                     <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
                                     <button type="submit" name="ban_user" class="button" onclick="return confirm('Are you sure you want to ban (delete) this user?')">Ban (Delete)</button>
                                 </form>

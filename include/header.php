@@ -19,6 +19,12 @@ $isAdmin = ($_SESSION['role'] ?? '') === 'admin';
         </div>
     <?php endif; ?>
 
+    <?php if ($isAdmin): ?>
+        <a href="homepage.php" style="display: inline-block; text-decoration: none;">
+            <img src="images/bxs-home.svg" alt="homePage" style="width: 40px; height: 40px; margin:10px;" />
+        </a>
+    <?php endif; ?>
+
     <div class="buttonContainer">
         <?php if ($isLoggedIn): ?>
             <button class="button" onclick="window.location.href='profilePage.php';">
