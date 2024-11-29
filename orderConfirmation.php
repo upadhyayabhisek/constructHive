@@ -6,7 +6,6 @@ if (!isset($_SESSION['userID'])) {
     exit();
 }
 
-// Check if order_id is set and valid
 if (!isset($_GET['order_id']) || !is_numeric($_GET['order_id'])) {
     header("Location: homepage.php");
     exit();
@@ -14,7 +13,6 @@ if (!isset($_GET['order_id']) || !is_numeric($_GET['order_id'])) {
 
 $order_id = (int) $_GET['order_id'];
 
-// Fetch order details, service details, and contractor details
 $sql_order = "
     SELECT o.order_id, o.customer_id, o.service_id, o.status, o.order_date,
            s.service_title, s.price, s.category,
@@ -46,11 +44,10 @@ $category = $order['category'];
 $customer_name = $order['customer_name'];
 $customer_phone = $order['customer_phone'];
 $customer_email = $order['customer_email'];
-$customer_address = $order['customer_address']; // Fetch customer address
+$customer_address = $order['customer_address'];
 $order_date = date('F j, Y', strtotime($order['order_date']));
 $status = ucfirst($order['status']);
 
-// Contractor details
 $contractor_name = $order['contractor_name'];
 $contractor_phone = $order['contractor_phone'];
 $contractor_email = $order['contractor_email'];
@@ -80,7 +77,7 @@ $conn->close();
             <hr>
 
             <h3>Order Details</h3>
-            <p><strong>Order ID:</strong> <?php echo htmlspecialchars($order_id); ?></p>
+            <p><strong>Order ID:</strong> CH<?php echo date('Y'); ?><?php echo htmlspecialchars($order_id); ?></p>
             <p><strong>Order Date:</strong> <?php echo $order_date; ?></p>
             <p><strong>Status:</strong> <?php echo $status; ?></p>
 

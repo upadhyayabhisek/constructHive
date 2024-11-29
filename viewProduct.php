@@ -30,7 +30,7 @@ if ($result_service->num_rows === 0) {
 $service = $result_service->fetch_assoc();
 
 $sql_contractor = "
-    SELECT ci.business_name, ci.years_of_experience, ci.certifications
+    SELECT ci.business_name, ci.years_of_experience, ci.certifications, ci.billing_city
     FROM contractorInformation ci
     WHERE ci.userbase_id = " . $service['user_id'];
 
@@ -80,7 +80,7 @@ $conn->close();
             <p><strong>Category:</strong> <?php echo htmlspecialchars($service['category']); ?></p>
             <p><strong>Posted by:</strong> <?php echo htmlspecialchars($service['fullname']); ?></p>
             <p><strong>Created at:</strong> <?php echo date('F j, Y', strtotime($service['created_at'])); ?></p>
-
+            <p><strong>Contractor Location:</strong> <?php echo htmlspecialchars($contractor['billing_city']); ?></p>
             <p><strong>Description:</strong> <?php echo nl2br(htmlspecialchars($service['service_description'])); ?></p>
             <p><strong>Price:</strong> NPr. <?php echo number_format($service['price'], 2); ?></p>
 

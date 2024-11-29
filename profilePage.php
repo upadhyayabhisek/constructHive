@@ -109,7 +109,7 @@ if ($serviceResult->num_rows > 0) {
                     <tbody>
                         <?php foreach ($orders as $order): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($order['order_id']); ?></td>
+                                <td><?php echo 'CH' . date('Y') . htmlspecialchars($order['order_id']); ?></td>
                                 <td><?php echo htmlspecialchars($order['service_title']); ?></td>
                                 <td><?php echo htmlspecialchars($order['service_description']); ?></td>
                                 <td>NPr<?php echo number_format($order['price'], 2); ?></td>
@@ -200,7 +200,7 @@ if ($serviceResult->num_rows > 0) {
                         <tbody>
                             <?php while ($order = $received_order_result->fetch_assoc()): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($order['order_id']); ?></td>
+                                    <td><?php echo 'CH' . date('Y') . htmlspecialchars($order['order_id']); ?></td>
                                     <td><?php echo htmlspecialchars($order['customer_name']); ?></td>
                                     <td><?php echo htmlspecialchars($order['customer_phone']); ?></td>
                                     <td><?php echo htmlspecialchars($order['customer_email']); ?></td>

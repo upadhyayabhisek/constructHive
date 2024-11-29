@@ -40,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    //bcrypt 
+
     $encryptedPassword = password_hash($password, PASSWORD_DEFAULT);
     $sqlStatement = $conn->prepare("INSERT INTO userbase (fullname, password, mobile_number, email) VALUES (?, ?, ?, ?)");
     $sqlStatement->bind_param("ssss", $fullName, $encryptedPassword, $mobile, $email);

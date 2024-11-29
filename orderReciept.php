@@ -38,7 +38,6 @@ if ($result_order->num_rows === 0) {
 
 $order = $result_order->fetch_assoc();
 
-// Extract order data
 $order_id = $order['order_id'];
 $service_title = $order['service_title'];
 $price = $order['price'];
@@ -50,15 +49,12 @@ $customer_address = $order['customer_address'];
 $order_date = date('F j, Y', strtotime($order['order_date']));
 $status = ucfirst($order['status']);
 
-// Contractor details
 $contractor_name = $order['contractor_name'];
 $contractor_phone = $order['contractor_phone'];
 $contractor_email = $order['contractor_email'];
-
-// Close the database connection
+$current_year = date('Y');
 $conn->close();
 
-// Generate the HTML content for the receipt
 $htmlContent = "
 <!DOCTYPE html>
 <html lang='en'>
@@ -203,7 +199,7 @@ $htmlContent = "
     <div class='receipt-container'>
         <div class='header'>
             <h1>Order Receipt</h1>
-            <p><strong>Order ID:</strong> $order_id</p>
+            <p><strong>Order ID:</strong> CH$current_year$order_id</p>
             <p><strong>Order Date:</strong> $order_date</p>
             <p><strong>Status:</strong> $status</p>
         </div>

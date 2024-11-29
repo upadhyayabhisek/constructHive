@@ -1,8 +1,8 @@
-/* Body */
+
 html, body {
     height: 100%;
     margin: 0;
-    padding-top: 60px; /* to account for fixed header */
+    padding-top: 60px; 
 }
 
 body {
@@ -15,12 +15,10 @@ body {
     min-height: 80vh;
 }
 
-/* Remove default link styling */
 a {
     text-decoration: none;
 }
 
-/* Header */
 .header {
     display: flex;
     justify-content: center;
@@ -50,15 +48,15 @@ a {
 
 .searchBox {
     flex-grow: 1;
-    max-width: 750px;  /* Increased max-width to make it wider */
+    max-width: 750px;  
     margin: 0 20px;
     display: flex;
     justify-content: center;
 }
 
 .searchInput {
-    width: 500px;         /* Ensure input takes up the full width of searchBox */
-    padding: 12px;       /* Slightly more padding for a more spacious look */
+    width: 500px;  
+    padding: 12px;      
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s;
@@ -175,7 +173,6 @@ a {
 }
 
 
-/* Sidebar category */
 .sidebarCategory {
     width: 220px;
     background-color: #f8f9fa;
@@ -236,7 +233,6 @@ a {
     background-color: #dcdfe1;
 }
 
-/* Sidebar Responsive */
 @media (max-width: 768px) {
     .sidebarCategory {
         width: 100%;
@@ -247,7 +243,6 @@ a {
     }
 }
 
-/* Main listProduct styling */
 .listProduct {
     max-width: 1100px; 
     margin: 80px auto 20px auto;
@@ -258,7 +253,6 @@ a {
     font-family: Arial, sans-serif;
 }
 
-/* Title Styling */
 .listProduct h2 {
     text-align: center;
     font-size: 28px;
@@ -266,7 +260,6 @@ a {
     margin-bottom: 30px;
 }
 
-/* Table styling for form inputs */
 .listProduct table {
     width: 100%;
     border-collapse: collapse;
@@ -310,7 +303,6 @@ a {
     font-size: 15px;
 }
 
-/* Submit Button */
 .listProduct table td button {
     padding: 14px 22px;
     background-color: #007bff;
@@ -333,7 +325,6 @@ a {
     outline: 2px solid #0056b3;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .listProduct {
         padding: 15px;
@@ -361,7 +352,6 @@ a {
 }
 
 
-/* Seller Registration Form Styling */
 .sellerRegistration {
     max-width: 900px;
     margin: 40px auto; 
@@ -372,7 +362,6 @@ a {
     font-family: Arial, sans-serif;
 }
 
-/* Title Styling */
 .sellerRegistration h2 {
     font-size: 24px;
     color: #333;
@@ -380,7 +369,6 @@ a {
     margin-bottom: 20px;
 }
 
-/* Form Styling */
 .sellerForm {
     width: 100%;
 }
@@ -401,7 +389,6 @@ a {
     color: #333;
 }
 
-/* Input Text Styling */
 .sellerRegisterTable td input,
 .sellerRegisterTable td select,
 .sellerRegisterTable td textarea {
@@ -422,7 +409,6 @@ a {
     outline: none;
 }
 
-/* Checkbox Styling */
 .sellerRegisterTable td input[type="checkbox"] {
     margin-right: 8px; 
     vertical-align: middle; 
@@ -435,14 +421,12 @@ a {
     line-height: 1.5;
 }
 
-/* Create a 2-column layout for checkboxes */
 .sellerRegisterTable td div.checkbox-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
     gap: 15px; 
 }
 
-/* Submit Button */
 .submitBtn {
     padding: 12px 20px;
     background-color: #007bff;
@@ -465,7 +449,6 @@ a {
     outline: 2px solid #0056b3;
 }
 
-/* Ensuring Spacing for Header & Footer */
 header {
     margin-bottom: 20px; 
 }
@@ -474,7 +457,6 @@ footer {
     margin-top: 20px; 
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .sellerRegistration {
         padding: 15px;
@@ -501,8 +483,6 @@ footer {
     }
 }
 
-
-/* Adjusted compact grid layout for the product container */
 .product-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
@@ -511,7 +491,6 @@ footer {
     margin-left: 260px; 
 }
 
-/* Compact product block design */
 .product-block {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -528,7 +507,6 @@ footer {
     transform: scale(1.03); 
 }
 
-/* Reduced image height and compact styling */
 .product-image {
     height: 160px; 
     overflow: hidden;
@@ -542,7 +520,6 @@ footer {
     object-fit: cover; 
 }
 
-/* Compact product info styling */
 .product-info {
     flex-grow: 1;
     padding: 8px;
@@ -606,7 +583,6 @@ footer {
     margin-left: 300px; 
 }
 
-/* Title */
 .product-details h1 {
     font-size: 2.2rem;  
     color: #333;
@@ -614,20 +590,17 @@ footer {
     text-align: center;
 }
 
-/* Category, Created Date, User Details */
 .product-details p {
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 10px;
 }
 
-/* Strong Labels */
 .product-details p strong {
     font-weight: bold;
     color: #333;
 }
 
-/* Description */
 .product-details .service-description {
     margin-top: 15px;
     font-size: 1.1rem; 
@@ -635,7 +608,6 @@ footer {
     line-height: 1.6;
 }
 
-/* Price */
 .product-details .product-price {
     font-size: 1.5rem;
     color: #007bff;
@@ -643,7 +615,6 @@ footer {
     margin-top: 20px;
 }
 
-/* Contractor Details Section */
 .contractor-details {
     margin-top: 30px;
     padding: 20px;
@@ -658,13 +629,12 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Contractor Info */
 .contractor-details p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
 }
-/* Service Images Section */
+
 .product-images {
     margin-top: 30px;
 }
@@ -703,7 +673,6 @@ footer {
 }
 
 
-/* Back Button */
 .product-details .button {
     display: inline-block;
     margin-top: 30px;
@@ -727,11 +696,10 @@ footer {
     outline: 2px solid #0056b3;
 }
 
-/* Responsive Styling for Product Details */
 @media (max-width: 768px) {
     .product-details {
         padding: 20px;
-        margin-left: 0; /* No margin for smaller screens */
+        margin-left: 0;
     }
 
     .product-details h1 {
@@ -755,7 +723,7 @@ footer {
     }
 
     .product-images .image-item img {
-        height: 250px; /* Adjusted height for smaller screens */
+        height: 250px; 
     }
 
     .button {

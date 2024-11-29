@@ -2,16 +2,14 @@
 include_once 'include/sessionStart.php';
 include_once 'include/databaseConnection.php';
 
-// Check if service_id and address are set and valid
 if (!isset($_GET['service_id']) || !is_numeric($_GET['service_id']) || !isset($_GET['address']) || empty($_GET['address'])) {
     die("Invalid request. Service ID or address is missing.");
 }
 
 $service_id = (int) $_GET['service_id'];
-$customer_id = $_SESSION['userID'];  // Assuming customer ID is stored in session
-$address = $conn->real_escape_string(trim($_GET['address']));  // Sanitize the address input
+$customer_id = $_SESSION['userID'];
+$address = $conn->real_escape_string(trim($_GET['address']));
 
-// Fetch service details from the database
 $sql_service = "
     SELECT service_id, service_title, price, category
     FROM services
@@ -33,7 +31,6 @@ $service_title = $service['service_title'];
 $price = $service['price'];
 $category = $service['category'];
 
-// Insert order into the database, including the address
 $sql_insert_order = "
     INSERT INTO ordersDB (customer_id, service_id, status, customer_address)
     VALUES ($customer_id, $service_id, 'pending', '$address')
