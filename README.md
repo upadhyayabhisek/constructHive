@@ -1,15 +1,56 @@
-# Project Name TBD
+# ConstructHive
 
+ConstructHive is a web application designed to connect customers with contractors by offering a range of services. The platform serves as a dynamic online marketplace, allowing customers to discover, purchase, and review services listed by contractors. Contractors can register their skills, manage their services, and expand their client base, while the platform ensures transparency and security.
 
-## Timeline
-- **2024/10/15**: Initial upload of project structure
-- **2024/10/16**: Implemented registration page
-- **2024/10/17**: Completed registration processing, including password hashing and existing email checks
-- **2024/10/18**: Started homepage and fixes in registration pages
-- **2024/10/19**: Header which changes based on login status fixed
-- **2024/10/22**: login page and login processing started
-- **2024/10/27**: login processes completed with admin and customer differentiation
-- **2024/11/5**:  Started seller registration form with minor fixes
-- **2024/11/11**: Seller registration processing started and list a job page
-- **2024/11/12**: Some css started and added sidebar
-- **2024/11/12**: Homepage display made and some css design
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+ConstructHive provides an efficient and user-friendly platform for freelancers (contractors) and customers:
+- **Contractors** can create profiles, list their services, and manage orders.
+- **Customers** can browse services, make informed purchases, and review listings.
+- **Admins** manage the platform, approve/reject services, and handle user profiles.
+
+The application ensures that only verified services are visible to customers, promoting trust and transparency.
+
+## Features
+### For Contractors:
+- Easy registration and profile creation.
+- Ability to post and manage service listings.
+- Upload images and detailed descriptions for each service.
+- Manage service orders and order status.
+  
+### For Customers:
+- Browse and search for services.
+- Detailed listings with title, description, and pricing.
+- Review services and make purchases.
+
+### For Admins:
+- Approve or reject services submitted by contractors.
+- Manage and promote/ban users.
+- Control both contractor and customer profiles.
+
+## Technologies Used
+ConstructHive is built using the following technologies:
+- **Frontend:**
+  - HTML
+  - CSS
+  - JavaScript
+- **Backend:**
+  - PHP
+- **Database:**
+  - MySQL (for storing user data, services, and transactions)
+
+## Installation
+To set up ConstructHive locally, follow the steps below:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/upadhyayabhisek/constructhive.git
+   cd constructhive
